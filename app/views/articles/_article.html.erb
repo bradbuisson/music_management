@@ -1,7 +1,7 @@
 <div id="<%= article.id %>" class="well-body well-inner articles">
 
   <span class="timestamp">
-    Posted on <%= article.created_at.to_formatted_s(:long).gsub(/\d*:\d*/, '') %>
+    Posted on <%= article.timestamp %>
   </span>
 
   <p> <%= auto_link(article.content, html: { target: '_blank' }) do |content|

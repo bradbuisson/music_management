@@ -4,9 +4,9 @@
   <td><%= show.venue %></td>
   <td><%= auto_link(show.address) %></td>
   <td class="price"><%= show.price_for_show %></td>
-  <td>
-    <% if signed_in? %>
+  <% if signed_in? %>
+    <td>
       <%= render( partial: ('actions'), locals: { show: show } ) %>
-    <% end %>
-  </td>
+    </td>
+  <% end %>
 </tr>

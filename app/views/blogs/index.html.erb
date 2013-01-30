@@ -5,14 +5,15 @@
 <div class="row-fluid">
   <aside class="span9">
     <% if signed_in? && @unpublished.any? %>
-      <legend>Unpublished Blogs</legend>
-      <%= render @unpublished %>
+      <legend> Unpublished Blogs </legend>
+
+        <%= render(@unpublished) %>
+        <br />
       <br />
-    <br />
+      <legend> Published Blogs </legend>
     <% end %>
 
-      <legend>Recent Entries</legend>
-      <%= render @blogs %>
+      <%= render(@blogs) %>
   </aside>
 
   <%= render('shared/tagbar') %>

@@ -1,4 +1,5 @@
 class Blog < ActiveRecord::Base
+  include TimestampHelper
   attr_accessible :title, :content, :published, :tag_names
 
   attr_writer :tag_names
@@ -9,8 +10,8 @@ class Blog < ActiveRecord::Base
 
   validates_presence_of :title, :content
 
-  scope :published, lambda { {conditions: ['published = ?', true]} }
-  scope :unpublished, lambda { {conditions: ['published = ?', false]} }
+  scope :published, lambda { { conditions: ['published = ?', true] } }
+  scope :unpublished, lambda { { conditions: ['published = ?', false] } }
   
   default_scope order: 'created_at DESC'
   
