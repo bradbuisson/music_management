@@ -246,9 +246,6 @@ padding: 5px;
   min-height: 40px;
   a { margin-top: 10px; }
   strong { font-size: 16px; }
-  .gravatar { opacity: .8; &:hover { opacity: 1; } }
-    &:hover {
-  background-color: $userBorder; strong { color: $red; } }
 }
 */
 
@@ -313,10 +310,39 @@ padding: 5px;
   margin-left: 2em;
 }
 
+/* Shows table */
+
+table {
+  @include tables-shadow;
+  text-shadow: 0px 1px 0px $white;
+}
+
+thead { 
+  @include footer;
+  font-size: 16px;
+}
+
+tbody {
+  font-size: 15px;
+  @include tables;
+}
+
+tbody .price {
+  font-weight: bold;
+  color: $green;
+}
+
+.actions {
+  display: inline-table;
+  li, li a {
+    display: inline-block;
+  }
+}
+
 /* various icons */
 
 [class^="icon-pencil"], [class*=" icon-pencil"],
-[class^="icon-plus-sign"], [class*=" icon-plus-sign"] { margin-right: 5px; }
+[class^="icon-plus-sign"], [class*=" icon-plus-sign"] { margin-right: 10px; }
 
 /* alert messages */
 

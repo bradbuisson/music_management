@@ -71,3 +71,15 @@
   -webkit-box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4)
   -moz-box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4)
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4)
+
+@mixin tables-shadow
+  -webkit-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1)
+  -moz-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1)
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1)
+
+@mixin tables
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($outterBody), to($white))
+  background-image: -webkit-linear-gradient(top, $outterBody, $white)
+  background-image: -moz-linear-gradient(top, $outterBody, $white)
+  background-image: -o-linear-gradient(top, $outterBody, $white)
+  background-image: linear-gradient(to bottom, $wellGray, $white)

@@ -1,22 +1,28 @@
-<td>
+<ul class="actions">
 
-  <li><a href="<%= new_show_path %>"
-      data-remote="true" data-toggle="modal"
-      data-target="#modal-window" title="New Show">
-    <i class="icon-plus-sign"> </i>
-  </a></li>
+  <li>
+    <a href="<%= new_show_path %>"
+        data-remote="true" data-toggle="modal"
+        data-target="#modal-window" title="New Show">
+      <i class="icon-plus-sign"> </i>
+    </a>
+  </li>
 
-  <li><a href="<%= edit_show_path(show) %>"
-      data-remote="true" data-toggle="modal"
-      data-target="#modal-window" title="Edit
-      <%= show.venue %> on <%= show.date %> at <%= show.time %>">
-    <i class="icon-pencil"> </i>
-  </a></li>
+  <li>
+    <a href="<%= edit_show_path(show) %>"
+        data-remote="true" data-toggle="modal"
+        data-target="#modal-window" title="Edit
+        <%= show.venue %> on <%= show.date %> at <%= show.time %>">
+      <i class="icon-pencil"> </i>
+    </a>
+  </li>
 
-  <li><a href="<%= show_path(show) %>" data-method="delete" 
-      data-confirm="Are you sure?" title="Delete
-      <%= show.venue %> on <%= show.date %> at <%= show.time %>">
-    <i class="icon-remove"> </i>
-  </a></li>
+  <li>
+    <a href="<%= show_path(show) %>" data-method="delete" 
+        data-confirm="Are you sure?" title="Delete
+        <%= show.venue %> on <%= show.date %> at <%= show.time %>">
+      <i class="icon-remove"> </i>
+    </a>
+  </li>
 
-</td>
+</ul>
