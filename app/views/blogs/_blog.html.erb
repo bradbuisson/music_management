@@ -1,6 +1,6 @@
 <div id="<%= blog.id %>" class="well-body well-inner">
 
-  <h2 class="bio" style="font-size:26px;margin-bottom:10px;">
+  <h2 class="bio title">
     <%= blog.title %>
     <span class="timestamp">
       Posted on <%= blog.created_at.to_formatted_s(:long).gsub(/\d*:\d*/, '') %>

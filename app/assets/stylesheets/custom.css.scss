@@ -127,6 +127,7 @@ aside {
 
 .navbar-inner {
   background-image: url(image_path('debut_dark.png'));
+  border: 1px solid $textGray;
 }
 
 .navbar-fixed-top .navbar-inner {
@@ -279,16 +280,37 @@ padding: 5px;
 }
 
 .timestamp {
-  font-size: 13px;
+  font-size: 15px;
   color: $timestamp;
   float: right;
   font-weight: normal;
 }
 
-.bio {
+.bio, .title {
   margin-bottom: 0px;
   font: italic 14px/18px Georgia, "Times New Roman", serif;
   color: $grayLarge;
+}
+
+.title {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+/* Blog formatting */
+
+.format { margin-bottom: .4em; }
+
+.format h1 {
+  text-align: center;
+  margin-bottom: 5px;
+  font: bold 18px/22px Georgia, "Times New Roman", serif;
+  color: $grayLarge;
+}
+
+.format .indent {
+  display: inline-block;
+  margin-left: 2em;
 }
 
 /* various icons */
