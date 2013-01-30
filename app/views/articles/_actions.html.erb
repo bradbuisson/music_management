@@ -1,0 +1,22 @@
+<ul class="share-actions pull-right">
+
+  <li><a href="<%= new_article_path %>"
+      data-remote="true" data-toggle="modal"
+      data-target="#modal-window" title="New Article">
+    <i class="icon-plus-sign"> </i>
+  </a></li>
+
+  <li><a href="<%= edit_article_path(article) %>"
+      data-remote="true" data-toggle="modal"
+      data-target="#modal-window" title="Edit
+      <%= article.content %>">
+    <i class="icon-pencil"> </i>
+  </a></li>
+
+  <li><a href="<%= article_path(article) %>" data-method="delete" 
+      data-confirm="Are you sure?" title="Delete
+      <%= article.content %>">
+    <i class="icon-remove"> </i>
+  </a></li>
+
+</ul>

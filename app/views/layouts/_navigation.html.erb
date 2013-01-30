@@ -1,0 +1,13 @@
+<nav>
+  <ul id="links" class="nav navigation pull-left">
+    <li class=""><%= link_to "Home", :home %></li>
+    <li class=""><%= link_to "News", :articles %></li>
+    <li class=""><%= link_to "Shows", :shows %></li>
+    <li class=""><%= link_to "Blog", :blogs %></li>
+  </ul>
+  <% if signed_in? %>
+    <ul class="nav pull-right">
+      <%= render 'layouts/usernav' %>
+    </ul>
+  <% end %>
+</nav>

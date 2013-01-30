@@ -1,0 +1,336 @@
+@import "bootstrap";
+@import "mixins";
+
+/* global configurations */
+
+html { overflow-y: scroll; }
+html, body { height: 100%; }
+
+body, input, textarea, select, .uneditable-input { font-family: "Helvetica Neue",Arial,sans-serif; }
+
+body {
+  background-image: url(image_path('ricepaper2.png'));
+  font-size: 14px;
+  line-height: 18px;
+  padding-top: 70px;
+}
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid $inputBorder;
+  width: 100%;
+  padding: 10px;
+  height: auto !important;
+  margin-bottom: 10px;
+  display: inline-block;
+  @include forms;
+}
+
+textarea { resize: none; }
+
+section { overflow: auto; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  color: inherit;
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 20px;
+}
+
+h2 small {
+  font-size: 12px;
+  font-weight: normal;
+  color: $statsGray;
+}
+
+h3 {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1;
+}
+
+h4 {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+h5, h6 { font-size: 11px; }
+p { margin: 0px 0px 10px; }
+small { font-size: 12px; }
+a:focus { outline: none; }
+
+ul, ol, li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer {
+  clear: both;
+  min-width: 767px;
+  margin: 0px 5%;
+  padding: 1em;
+  border: 1px solid $userBorder;
+  color: $grayLight;
+  @include footer;
+}
+
+footer .container {
+  width: auto;
+  a { color: $blueDark; &:hover { color: $blue;} }
+}
+
+aside {
+  section {
+    border-top: 1px solid $border;
+    padding: 10px 0;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+  }
+}
+
+/* Page Layout */
+
+.page-wrapper {
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px solid $userBorder;
+  border-bottom-width: 0;
+  min-height: 100%;
+  min-width: 767px;
+  margin: -1.4em 5% auto;
+  padding: 1.4em 1em 2em;
+}
+
+.navbar-inner .container-fluid {
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 0;
+  min-width: 560px;
+}
+
+.navbar-inner {
+  background-image: url(image_path('debut_dark.png'));
+}
+
+.navbar-fixed-top .navbar-inner {
+padding: 5px;
+}
+
+.nav > li > a {
+  text-transform: uppercase;
+  font-size: 103%;
+  letter-spacing: 1px;
+}
+
+.navbar-inverse .nav .active > a,
+.navbar-inverse .nav .active:hover > a
+ {
+  background: transparent;
+  box-shadow: none;
+}
+
+.navbar .gravatar { @include hero; }
+#close_home { padding: 6px 15px; }
+.center { text-align: center; }
+
+/* Default Items Display */
+
+.well-body {
+  background: transparent;
+  border-bottom: 1px solid $moduleBorder;
+  margin: 0;
+  padding: 12px;
+  @include wells;
+}
+
+.well-inner-header, .modal_header {
+  line-height: 10px;
+  margin-bottom: 4px;
+}
+
+.well-inner .content, .modal_content {
+  display: block;
+  line-height: 19px;
+  margin-left: 58px;
+}
+
+.well-footer {
+  font-size: 13px;
+  margin-left: 58px;
+}
+
+.well-footer form {
+  display: inline-block;
+  margin-bottom: -6px;
+}
+
+/* Administrative actions */
+
+
+.share-actions li {
+  display: inline-block;
+}
+
+.share-actions a { display: inline; }
+
+/* Modal Config */
+
+.modal-form form textarea {
+  color: $textGrayLight;
+  font-size: 14px;
+  height: 78px !important;
+}
+
+.modal-form form input {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.modal {
+  margin-top: -195px;
+  background: none repeat scroll 0% 0% transparent;
+  overflow: visible;
+  border: 0;
+  box-shadow: none;
+  outline: none;
+}
+
+.modal-content {
+  position: relative;
+  background-color: $white;
+  @include modal;
+}
+
+.modal-header {
+  cursor: default;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-color: $userBorder;
+  border-bottom: 1px solid $borderDarker;
+  @include modal-header;
+}
+
+.modal-header .modal-title {
+  cursor: move;
+  width: 75%;
+  margin: 0px auto;
+  font-weight: bold;
+  line-height: 18px;
+  text-align: center;
+  text-shadow: 0px 1px 0px $white;
+}
+
+/*
+#likes {
+  cursor: default;
+  background-color: $mainGray;
+  border-top: 1px solid $borderDarker;
+  min-height: 40px;
+  a { margin-top: 10px; }
+  strong { font-size: 16px; }
+  .gravatar { opacity: .8; &:hover { opacity: 1; } }
+    &:hover {
+  background-color: $userBorder; strong { color: $red; } }
+}
+*/
+
+.modal-body { overflow: hidden; }
+
+.modal-backdrop, .modal-backdrop.fade.in { opacity: .4; }
+
+.modal-header button.close { margin-top: -2px; }
+.username_modal { display: block; }
+.modal-footer { cursor: move; }
+
+
+/* Articles Blogs News */
+
+.articles {
+  margin-left: 0;
+}
+
+.articles p {
+  font-size: 21px;
+  font-weight: 200;
+  line-height: 30px;
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+  @include gravatars;
+}
+
+.timestamp {
+  font-size: 13px;
+  color: $timestamp;
+  float: right;
+  font-weight: normal;
+}
+
+.bio {
+  margin-bottom: 0px;
+  font: italic 14px/18px Georgia, "Times New Roman", serif;
+  color: $grayLarge;
+}
+
+/* various icons */
+
+[class^="icon-pencil"], [class*=" icon-pencil"],
+[class^="icon-plus-sign"], [class*=" icon-plus-sign"] { margin-right: 5px; }
+
+/* alert messages */
+
+#alert-notice {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+#error_explanation {
+  color: $red;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+#inline {
+  margin-left: -10px;
+  margin-bottom: 5px;
+}
+
+#alert-inline {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
+}
+
+/* debugging for development */
+
+.debug_dump {
+  clear: both;
+  width: 100%;
+  margin-top: 3em;
+  @include paddings; @include forms;
+}

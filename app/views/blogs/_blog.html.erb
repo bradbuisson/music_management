@@ -1,0 +1,26 @@
+<div id="<%= blog.id %>" class="well-body well-inner">
+
+  <h2 class="bio" style="font-size:26px;margin-bottom:10px;">
+    <%= blog.title %>
+    <span class="timestamp">
+      Posted on <%= blog.created_at.to_formatted_s(:long).gsub(/\d*:\d*/, '') %>
+    </span>
+  </h2>
+
+    <%= render(partial: ("shared/content"),
+                locals: { item: blog }) %>
+
+  <% if blog.tags.any? %>
+    <span class="bio">
+      <% blog.tags.each do |tag| %>
+        <i class="icon-tag"></i> <%= link_to tag.name, tag %>
+      <% end %>
+    </span>
+  <% end %>
+
+  <% if signed_in? %>
+    <%= render( partial: ('blogs/actions'), locals: { blog: blog } ) %>
+  <% end %>
+
+</div>
+

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title><%= full_title(yield(:title)) %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Future Home For Samuel Raines Music" %>">
+    <meta name="author" content="<%= content_for?(:author) ? yield(:author) : "Artist: Samuel Guy Raines, Designer: Nathan Carl Couch" %>">
+      <%= stylesheet_link_tag "application", media: "all" %>
+      <%= javascript_include_tag "application" %>
+      <%= csrf_meta_tags %>
+      <%= render 'layouts/shim' %>
+      <%= yield(:head) %>
+    </head>
+    <body>
+      <%= render 'shared/modal' if signed_in? %>
+      <header class="navbar navbar-fixed-top">
+        <nav class="navbar-inverse navbar-inner">
+          <div class="container-fluid">
+            <%= render 'layouts/navigation' %>
+          </div>
+        </nav>
+      </header>
+      <div class="page-wrapper" id="main" role="main">
+        <%= render 'layouts/messages' %>
+        <%= yield %>
+      </div>
+      <footer class="footer">
+        <div class="container">
+          <%= render 'layouts/footer' %>
+      </div>
+    </footer>
+  </body>
+</html>

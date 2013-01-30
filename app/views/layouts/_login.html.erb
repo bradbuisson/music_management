@@ -1,0 +1,5 @@
+<%= form_for(:session, url: :sessions) do |f| %>
+  <%= f.email_field :email, class: "span2", placeholder: "Email" %>
+  <%= f.password_field :password, class: "span2", placeholder: "Password" %>
+  <%= f.submit "Sign in", class: "btn btn-primary" %>
+<% end %>

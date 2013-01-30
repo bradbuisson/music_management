@@ -1,0 +1,6 @@
+<% content_for :head do %>
+  <% provide(:title, @title) %>
+<% end %>
+
+<legend>Recent News</legend>
+  <%= render @articles %>

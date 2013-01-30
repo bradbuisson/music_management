@@ -1,0 +1,10 @@
+<tr>
+  <td><%= show.date %></td>
+  <td><%= show.time %></td>
+  <td><%= show.venue %></td>
+  <td><%= auto_link(show.address) %></td>
+  <td><%= show.price_for_show %></td>
+  <% if signed_in? %>
+    <%= render( partial: ('actions'), locals: { show: show } ) %>
+  <% end %>
+</tr>

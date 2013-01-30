@@ -1,0 +1,18 @@
+<div id="<%= article.id %>" class="well-body well-inner articles">
+
+  <span class="timestamp">
+    Posted on <%= article.created_at.to_formatted_s(:long).gsub(/\d*:\d*/, '') %>
+  </span>
+
+  <%= render(partial: ("shared/content"),
+              locals: { item: article }) %>
+
+  <% if signed_in? %>
+    <div class="well-footer">
+      <span class="bio" style="opacity:0"> hack </span>
+      <%= render( partial: ('actions'), locals: { article: article } ) %>
+    </div>
+  <% end %>
+
+</div>
+
