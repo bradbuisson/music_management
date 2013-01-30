@@ -4,8 +4,8 @@ class BlogsController < ApplicationController
 
   def index
     @title = "Samuel Raines Blog"
-    @unpublished = Blog.paginate(page: params[:page]).where("published = ?", false)
-    @blogs = Blog.paginate(page: params[:page]).where("published = ?", true)
+    @unpublished = Blog.unpublished.page(params[:page])
+    @blogs = Blog.published.page(params[:page])
 
     respond_to do |format|
       format.html

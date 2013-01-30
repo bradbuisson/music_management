@@ -5,8 +5,4 @@ class Tag < ActiveRecord::Base
   has_many :blogs, through: :taggings
 
   default_scope order: 'name'
-
-  def to_param
-    name
-  end
 end

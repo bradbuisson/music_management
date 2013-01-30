@@ -6,6 +6,9 @@ class Blog < ActiveRecord::Base
 
   has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
+
+  scope :published, lambda { {conditions: ['published = ?', true]} }
+  scope :unpublished, lambda { {conditions: ['published = ?', false]} }
   
   default_scope order: 'created_at DESC'
   

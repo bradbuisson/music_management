@@ -1,7 +1,7 @@
 class TagsController < ApplicationController
 
   def show
-    @tag = Tag.find_by_name(params[:id])
-    @blogs = @tag.blogs.paginate(page: params[:page]).where("published = ?", true)
+    @tag = Tag.find(params[:id])
+    @blogs = @tag.blogs.published.page(params[:page])
   end
 end
