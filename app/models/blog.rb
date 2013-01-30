@@ -7,6 +7,8 @@ class Blog < ActiveRecord::Base
   has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
 
+  validates_presence_of :title, :content
+
   scope :published, lambda { {conditions: ['published = ?', true]} }
   scope :unpublished, lambda { {conditions: ['published = ?', false]} }
   

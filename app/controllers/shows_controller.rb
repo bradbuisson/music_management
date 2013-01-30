@@ -36,7 +36,9 @@ class ShowsController < ApplicationController
         format.html { redirect_to shows_url, notice: 'Show was successfully created.' }
         format.json { render json: @show, status: :created, location: shows_url }
       else
-        format.html { render action: "new" }
+        format.html { @shows = []
+                      flash.now[:notice] = "Something went wrong with your request."
+                      render 'index' }
         format.json { render json: @show.errors, status: :unprocessable_entity }
       end
     end
@@ -50,7 +52,9 @@ class ShowsController < ApplicationController
         format.html { redirect_to shows_url, notice: 'Show was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { @shows = []
+                      flash.now[:notice] = "Something went wrong with your request."
+                      render 'index' }
         format.json { render json: @show.errors, status: :unprocessable_entity }
       end
     end

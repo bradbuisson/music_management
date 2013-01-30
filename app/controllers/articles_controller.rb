@@ -1,6 +1,5 @@
 class ArticlesController < ApplicationController
-  before_filter :signed_in_user, :except => :index
-  before_filter :remove_stale_tags, :only => :update
+  before_filter :signed_in_user, except: :index
 
   def index
     @title = "News"
@@ -41,7 +40,9 @@ class ArticlesController < ApplicationController
         format.html { redirect_to articles_url, notice: 'Article was successfully created.' }
         format.json { render json: @article, status: :created, location: articles_url }
       else
-        format.html { render action: "new" }
+        format.html { @articles = []
+                      flash.now[:notice] = "Something went wrong with your request."
+                      render 'index' }
         format.json { render json: @article.errors, status: :unprocessable_entity }
       end
     end
@@ -55,7 +56,9 @@ class ArticlesController < ApplicationController
         format.html { redirect_to articles_url, notice: 'Article was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { @articles = []
+                      flash.now[:notice] = "Something went wrong with your request."
+                      render 'index' }
         format.json { render json: @article.errors, status: :unprocessable_entity }
       end
     end

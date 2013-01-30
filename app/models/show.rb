@@ -1,6 +1,7 @@
 class Show < ActiveRecord::Base
   attr_accessible :date, :time, :venue, :address, :price
 
+  validates_presence_of :date, :time, :venue, :address
   validates_numericality_of :price, allow_nil: true, allow_blank: true
 
   before_save :check_price

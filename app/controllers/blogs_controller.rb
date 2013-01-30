@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
-  before_filter :signed_in_user, :except => :index
-  before_filter :remove_stale_tags, :only => :update
+  before_filter :signed_in_user, except: :index
+  before_filter :remove_stale_tags, only: [:create, :update, :destroy]
 
   def index
     @title = "Samuel Raines Blog"
@@ -38,7 +38,10 @@ class BlogsController < ApplicationController
         format.html { redirect_to blogs_url, notice: 'Blog was successfully created.' }
         format.json { render json: @blog, status: :created, location: blogs_url }
       else
-        format.html { render action: "new" }
+        format.html { @unpublished = []
+                      @blogs = []
+                      flash.now[:notice] = "Something went wrong with your request."
+                      render 'index' }
         format.json { render json: @blog.errors, status: :unprocessable_entity }
       end
     end
@@ -52,7 +55,10 @@ class BlogsController < ApplicationController
         format.html { redirect_to blogs_url, notice: 'Blog was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { @unpublished = []
+                      @blogs = []
+                      flash.now[:notice] = "Something went wrong with your request."
+                      render 'index' }
         format.json { render json: @blog.errors, status: :unprocessable_entity }
       end
     end
