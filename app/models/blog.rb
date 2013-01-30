@@ -1,5 +1,5 @@
 class Blog < ActiveRecord::Base
-  attr_accessible :title, :content, :tag_names, :published
+  attr_accessible :title, :content, :published, :tag_names
 
   attr_writer :tag_names
   after_save :assign_tags

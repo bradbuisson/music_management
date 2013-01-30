@@ -16,7 +16,6 @@ class ArticlesController < ApplicationController
     @title = "New Headline"
 
     respond_to do |format|
-      format.html
       format.js
       format.json { render json: @blog }
     end
@@ -25,11 +24,7 @@ class ArticlesController < ApplicationController
   def edit
     @article = Article.find(params[:id])
     @title = "Edit Article | #{@article.content}"
-
-    respond_to do |format|
-      format.html
-      format.js
-    end
+    respond_to :js
   end
 
   def create

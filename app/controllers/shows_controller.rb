@@ -1,5 +1,5 @@
 class ShowsController < ApplicationController
-  before_filter :signed_in_user, :except => :index
+  before_filter :signed_in_user, except: :index
 
   def index
     @title = "Shows"
@@ -16,7 +16,6 @@ class ShowsController < ApplicationController
     @show = Show.new
 
     respond_to do |format|
-      format.html
       format.js
       format.json { render json: @show }
     end
@@ -25,7 +24,7 @@ class ShowsController < ApplicationController
   def edit
     @show = Show.find(params[:id])
     @title = "#{@show.time} | #{@show.venue}"
-    respond_to :html, :js
+    respond_to :js
   end
 
   def create

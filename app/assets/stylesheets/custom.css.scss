@@ -300,7 +300,7 @@ padding: 5px;
 
 .title {
   font-size: 26px;
-  margin-bottom: 10px;
+  margin-bottom: .8em;
 }
 
 /* Blog formatting */
@@ -308,7 +308,6 @@ padding: 5px;
 .format { margin-bottom: .4em; }
 
 .format h1 {
-  text-align: center;
   margin-bottom: 5px;
   font: bold 18px/22px Georgia, "Times New Roman", serif;
   color: $grayLarge;

@@ -18,7 +18,6 @@ class BlogsController < ApplicationController
     @title = "New Blog"
 
     respond_to do |format|
-      format.html
       format.js
       format.json { render json: @blog }
     end
@@ -27,7 +26,7 @@ class BlogsController < ApplicationController
   def edit
     @blog = Blog.find(params[:id])
     @title = "Edit Blog | #{@blog.title}"
-    respond_to :html, :js
+    respond_to :js
   end
 
   def create

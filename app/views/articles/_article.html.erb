@@ -4,8 +4,8 @@
     Posted on <%= article.created_at.to_formatted_s(:long).gsub(/\d*:\d*/, '') %>
   </span>
 
-  <%= render(partial: ("shared/content"),
-              locals: { item: article }) %>
+  <p> <%= auto_link(article.content, html: { target: '_blank' }) do |content|
+      truncate(content, length: 30) end %> </p>
 
   <% if signed_in? %>
     <div class="well-footer">
