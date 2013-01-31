@@ -79,7 +79,6 @@ ul, ol, li {
 
 footer {
   clear: both;
-  min-width: 420px;
   max-width: 1020px;
   margin: 0px 48px;
   padding: 1em;
@@ -117,7 +116,6 @@ aside {
   border-top-width: 0;
   border-bottom-width: 0;
   min-height: 100%;
-  min-width: 420px;
   max-width: 1020px;
   margin: -1.4em 48px auto;
   padding: 3em 1em 2em;
@@ -130,7 +128,6 @@ aside {
 .navbar {
   margin-left: 48px;
   margin-right: 48px;
-  min-width: 450px;
   max-width: 1050px;
 }
 
@@ -427,6 +424,35 @@ tbody .price {
     margin-left: 0;
     margin-right: 0;
     }
+
+  footer,
+  .page-wrapper {
+    min-width: 275px;
+  }
+
+  .navbar { 
+    min-width: 305px; 
+  }
+
+  .home-page {
+    margin: 0;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .timestamp {
+    margin-top: 5px;
+  }
+
+  .format h1 {
+    font: bold 16px/20px Georgia, "Times New Roman", serif
+  }
+
+  .articles p {
+    margin-top: 25px;
+  }
 }
 
 /* debugging for development */

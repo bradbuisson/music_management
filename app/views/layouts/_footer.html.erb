@@ -6,4 +6,8 @@
 
 <nav class="pull-right">
 
-  <%= link_to "Admin Login", :signin %>
+  <% if signed_in? %>
+    <li class="hidden-desktop"><%= link_to "Signout", :signout, method: "delete" %></li>
+  <% else %>
+    <%= link_to "Admin Signin", :signin %>
+  <% end %>

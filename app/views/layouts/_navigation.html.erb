@@ -1,9 +1,12 @@
 <ul id="links" class="nav navigation">
-  <% if signed_in? %>
-    <%= render 'layouts/usernav' if signed_in? %>
-  <% end %>
   <li class=""><%= link_to "Home", :home %></li>
   <li class=""><%= link_to "Shows", :shows %></li>
   <li class=""><%= link_to "News", :articles %></li>
   <li class=""><%= link_to "Blog", :blogs %></li>
 </ul>
+
+  <% if signed_in? %>
+    <ul class="nav pull-right">
+    <%= render 'layouts/usernav' if signed_in? %>
+    </ul>
+  <% end %>
