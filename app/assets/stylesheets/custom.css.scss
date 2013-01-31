@@ -308,16 +308,12 @@ padding: 5px;
 /* Blog formatting */
 
 .format { margin-bottom: .4em; }
+.format p { text-indent: 2em; }
 
 .format h1 {
   margin-bottom: 5px;
   font: bold 18px/22px Georgia, "Times New Roman", serif;
   color: $grayLarge;
-}
-
-.format .indent {
-  display: inline-block;
-  margin-left: 2em;
 }
 
 /* Shows table */
