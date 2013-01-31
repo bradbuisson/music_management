@@ -1,7 +1,7 @@
 <div id="<%= article.id %>" class="well-body well-inner articles">
 
   <span class="timestamp">
-    Posted on <%= article.timestamp %>
+    <%= article.timestamp %>
   </span>
 
   <p> <%= auto_link(article.content, html: { target: '_blank' }) do |content|
@@ -9,7 +9,7 @@
 
   <% if signed_in? %>
     <div class="well-footer">
-      <span class="bio" style="opacity:0"> hack </span>
+      <span class="bio" style="opacity:0">.</span>
       <%= render( partial: ('actions'), locals: { article: article } ) %>
     </div>
   <% end %>
