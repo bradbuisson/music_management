@@ -286,7 +286,6 @@ margin: 0 48px 10px;
 
 .modal-backdrop, .modal-backdrop.fade.in { opacity: .4; }
 
-.modal-header button.close { margin-top: -2px; }
 .username_modal { display: block; }
 .modal-footer { cursor: move; }
 
@@ -453,6 +452,10 @@ tbody .price {
 
   .articles p {
     margin-top: 40px;
+  }
+
+  .modal.fade.in {
+    top: 185px;
   }
 }
 
