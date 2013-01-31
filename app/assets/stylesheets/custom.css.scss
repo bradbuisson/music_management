@@ -131,6 +131,14 @@ aside {
   max-width: 1050px;
 }
 
+.navbar .nav {
+  margin-right: 0; 
+}
+
+.navbar .nav:first-child {
+  border-bottom: 1px solid $border;
+}
+
 .navbar .navbar-inner {
   padding: 0;
   border-radius: 0;
