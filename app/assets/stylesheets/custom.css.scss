@@ -175,7 +175,8 @@ aside {
 .center { text-align: center; }
 
 .logo { 
-margin: 0 48px 10px; }
+margin: 0 48px 10px; 
+}
 
 .home-page { margin: 60px 0; }
 
@@ -408,6 +409,24 @@ tbody .price {
 .field_with_errors {
   @extend .control-group;
   @extend .error;
+}
+
+/* responsive styles */
+
+@media (max-width: 480px) {
+
+  body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  footer,
+  .navbar,
+  .page-wrapper,
+  .logo {
+    margin-left: 0;
+    margin-right: 0;
+    }
 }
 
 /* debugging for development */
