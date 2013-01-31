@@ -2,10 +2,10 @@
   <td><%= show.date %></td>
   <td><%= show.time %></td>
   <td><%= show.venue %></td>
-  <td><%= auto_link(show.address) %></td>
-  <td class="price"><%= show.price_for_show %></td>
+  <td class="hidden-phone"><%= auto_link(show.address) %></td>
+  <td class="price hidden-phone"><%= show.price_for_show %></td>
   <% if signed_in? %>
-    <td>
+    <td class="hidden-phone">
       <%= render( partial: ('actions'), locals: { show: show } ) %>
     </td>
   <% end %>
