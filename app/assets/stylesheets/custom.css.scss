@@ -326,13 +326,19 @@ margin: 0 48px 10px; }
 
 .title {
   font-size: 26px;
-  margin-bottom: .8em;
+  margin-bottom: .5em;
 }
 
 /* Blog formatting */
 
-.format { margin-bottom: .4em; }
-.format p { text-indent: 2em; }
+.format { 
+  margin-bottom: .4em; 
+  line-height: 24px;
+}
+
+.format p { 
+  text-indent: 2em;
+}
 
 .format h1 {
   margin-bottom: 10px;
