@@ -356,12 +356,6 @@ aside {
   line-height: 30px;
 }
 
-.gravatar {
-  float: left;
-  margin-right: 10px;
-  @include gravatars;
-}
-
 .timestamp {
   font-size: 15px;
   color: $timestamp;
@@ -386,6 +380,7 @@ aside {
 .format { 
   margin-bottom: .4em; 
   line-height: 24px;
+  font-size: 15px;
 }
 
 .format p { 
@@ -500,6 +495,10 @@ tbody .price {
 
   .timestamp {
     margin-top: 5px;
+  }
+
+  .format {
+    font-size: 14px;
   }
 
   .format h1 {
