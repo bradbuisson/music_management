@@ -1,9 +1,7 @@
 class Blog < ActiveRecord::Base
   include TimestampHelper
   attr_accessible :title, :content, :published, :tag_names
-
   attr_writer :tag_names
-  after_save :assign_tags
 
   has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
@@ -12,6 +10,8 @@ class Blog < ActiveRecord::Base
 
   scope :published, lambda { { conditions: ['published = ?', true] } }
   scope :unpublished, lambda { { conditions: ['published = ?', false] } }
+
+  after_save :assign_tags
   
   default_scope order: 'created_at DESC'
   
