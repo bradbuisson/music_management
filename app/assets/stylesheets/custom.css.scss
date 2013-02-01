@@ -7,6 +7,11 @@ html {
   overflow-y: scroll; 
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   background-image: url(image_path('ricepaper2.png'));
   font-family: "Helvetica Neue", Arial, sans-serif; 
@@ -56,7 +61,7 @@ h1 {
 }
 
 h2 {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: bold;
   line-height: 20px;
 }
@@ -157,12 +162,11 @@ aside {
 
 .navbar
 .nav {
-  margin-right: 0; 
+  margin-right: 0;
 }
 
-.navbar
-.nav:first-child {
-  border-bottom: 1px solid $border;
+#fat-menu {
+  border-top: 1px solid $border;
 }
 
 .navbar
@@ -182,8 +186,8 @@ aside {
 .navbar
 .nav li a {
   text-align: center;
-  border-left: 1px solid rgba(255, 255, 255, .75);
-  border-right: 1px solid rgba(0, 0, 0, .1);
+  border-left: 1px solid rgba(255, 255, 255, 0.75);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .navbar

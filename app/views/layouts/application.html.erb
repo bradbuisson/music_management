@@ -16,7 +16,7 @@
     <body>
       <%= render 'shared/modal' if signed_in? %>
       <div class="masthead">
-      <h1 class="muted logo hidden-phone"> A Beautiful Logo </h1>
+      <h2 class="muted logo hidden-phone"> <%= full_title(yield(:title)) %> </h2>
         <div class="navbar">
           <div class="navbar-inner">
             <div class="container">

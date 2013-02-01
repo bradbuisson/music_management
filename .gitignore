@@ -6,15 +6,6 @@
 /tmp/*
 /doc/*
 
-/public/attachments/*
-
-/bin/*
-*.sh
-
-Guardfile
-.rspec
-.rvmrc
-
 **.swp
 *~
 *.save
