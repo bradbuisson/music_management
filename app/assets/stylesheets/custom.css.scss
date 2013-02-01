@@ -348,12 +348,17 @@ aside {
 
 .articles {
   margin-left: 0;
+  clear: both;
 }
 
 .articles p {
   font-size: 18px;
   font-weight: 200;
   line-height: 30px;
+}
+
+#atom {
+  margin-right: 15px;
 }
 
 .timestamp {
