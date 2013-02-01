@@ -1,5 +1,5 @@
 atom_feed do |feed|
-  feed.title( "Samuel Raines Official News" )
+  feed.title( "Samuel Raines Official Music News" )
 
   latest_article = @articles.sort_by(&:updated_at).last
   feed.updated( latest_article && latest_article.updated_at )
@@ -8,8 +8,7 @@ atom_feed do |feed|
     feed.entry(article) do |entry|
       entry.title( article.content )
       entry.summary :type => 'xhtml' do |xhtml|
-        xhtml.p( article.content )
-        xhtml.span( "Posted on #{article.timestamp}." )
+        xhtml.p( "Posted on #{article.timestamp}." )
       end
       entry.author { |author| author.name( "Samuel Raines" ) }
     end
