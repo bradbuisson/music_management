@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-  before_filter :signed_in_user, except: :index
+  before_filter :signed_in_user, except: [:index, :feed]
   before_filter :remove_stale_tags, only: [:create, :update, :destroy]
 
   def index
@@ -11,6 +11,11 @@ class BlogsController < ApplicationController
       format.html
       format.json { render json: @blogs }
     end
+  end
+
+  def show
+    @blog = Blog.find(params[:id])
+    @title = @blog.title
   end
 
   def new
@@ -70,6 +75,14 @@ class BlogsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to blogs_url, notice: "Your blog was removed" }
       format.json { head :no_content }
+    end
+  end
+
+  def feed
+    @blogs = Blog.all
+    respond_to do |format|
+      format.atom
+      format.xml { render :xml => @blogs }
     end
   end
 

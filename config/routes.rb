@@ -1,8 +1,11 @@
 SamuelRainesMusic::Application.routes.draw do
   resources :users, :only => [:edit, :update]
   resources :sessions, :only => [:new, :create, :destroy]
-  resources :shows, :blogs, :except => :show
-  resources :articles, :except => :show do
+  resources :shows, :except => :show
+  resources :blogs do
+    get :feed, :on => :collection
+  end
+  resources :articles do
     get :feed, :on => :collection
   end
   resources :tags, :only => :show

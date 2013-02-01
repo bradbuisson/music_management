@@ -11,6 +11,11 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def show
+    @article = Article.find(params[:id])
+    @title = @article.content
+  end
+
   def new
     @article = Article.new
     @title = "New Headline"

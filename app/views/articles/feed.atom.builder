@@ -6,8 +6,8 @@ atom_feed do |feed|
 
   @articles.each do |article|
     feed.entry(article) do |entry|
-      entry.title( latest_article.created_at.to_date )
-      entry.content( article.content, :type => :html )
+      entry.title( article.content )
+      entry.content( article.content )
       entry.author { |author| author.name( "Samuel Raines" ) }
     end
   end
