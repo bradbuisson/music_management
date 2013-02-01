@@ -9,7 +9,7 @@ atom_feed do |feed|
       entry.title( article.content )
       entry.summary :type => 'xhtml' do |xhtml|
         xhtml.p( article.content )
-        xhtml.span( "on #{article.timestamp}" )
+        xhtml.span( "Posted on #{article.timestamp}." )
       end
       entry.author { |author| author.name( "Samuel Raines" ) }
     end

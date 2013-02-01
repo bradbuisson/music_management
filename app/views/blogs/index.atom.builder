@@ -9,7 +9,7 @@ atom_feed do |feed|
       entry.title( blog.title )
       entry.summary :type => 'xhtml' do |xhtml|
         xhtml.span( "Posted on #{blog.timestamp}" )
-        xhtml.p( blog.content )
+        xhtml.p( strip_tags(blog.content) )
         xhtml.span( "Tagged with #{blog.tag_names}" )
       end
       entry.author { |author| author.name( "Samuel Raines" ) }

@@ -8,22 +8,8 @@ atom_feed do |feed|
     feed.entry( show ) do |entry|
       entry.title( "#{show.venue} on #{show.date} at #{show.time}" )
       entry.summary :type => 'xhtml' do |xhtml|
-        xhtml.table do
-          xhtml.tr do
-            xhtml.th( "Date" )
-            xhtml.th( "Time" )
-            xhtml.th( "Venue" )
-            xhtml.th( "Address" )
-            xhtml.th( "Price" )
-          end
-          xhtml.tr do
-            xhtml.td( show.date )
-            xhtml.td( show.time )
-            xhtml.td( show.venue )
-            xhtml.td( show.address )
-            xhtml.td( show.price_for_show )
-          end
-        end
+        xhtml.p( strip_tags(show.address) )
+        xhtml.span( "Price: #{show.price_for_show}" )
       end
       entry.author { |author| author.name( "Samuel Raines" ) }
     end
