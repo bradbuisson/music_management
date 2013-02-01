@@ -6,7 +6,7 @@ class Show < ActiveRecord::Base
 
   before_save :check_price
 
-  default_scope order: 'created_at DESC'
+  default_scope order: 'updated_at DESC'
 
   def price_for_show
     if price.nil?
