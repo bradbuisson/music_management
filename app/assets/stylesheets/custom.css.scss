@@ -3,10 +3,22 @@
 
 /* global configurations */
 
-html { overflow-y: scroll; }
-html, body { height: 100%; }
+html { 
+  overflow-y: scroll; 
+}
 
-body, input, textarea, select, .uneditable-input { font-family: "Helvetica Neue",Arial,sans-serif; }
+html,
+body {
+  height: 100%;
+}
+
+body,
+input,
+textarea,
+select,
+.uneditable-input {
+  font-family: "Helvetica Neue", Arial, sans-serif; 
+}
 
 body {
   background-image: url(image_path('ricepaper2.png'));
@@ -17,7 +29,10 @@ body {
 
 @import "bootstrap-responsive";
 
-input, textarea, select, .uneditable-input {
+input,
+textarea,
+select,
+.uneditable-input {
   border: 1px solid $inputBorder;
   width: 100%;
   padding: 10px;
@@ -27,11 +42,20 @@ input, textarea, select, .uneditable-input {
   @include forms;
 }
 
-textarea { resize: none; }
+textarea {
+  resize: none; 
+}
 
-section { overflow: auto; }
+section {
+  overflow: auto; 
+}
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
   color: inherit;
   text-rendering: optimizeLegibility;
@@ -66,12 +90,26 @@ h4 {
   line-height: 18px;
 }
 
-h5, h6 { font-size: 11px; }
-p { margin: 0px 0px 10px; }
-small { font-size: 12px; }
-a:focus { outline: none; }
+h5,
+h6 {
+  font-size: 11px; 
+}
 
-ul, ol, li {
+p { 
+  margin: 0px 0px 10px; 
+}
+
+small { 
+  font-size: 12px; 
+}
+
+a:focus { 
+  outline: none; 
+}
+
+ul,
+ol,
+li {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -87,7 +125,8 @@ footer {
   @include footer;
 }
 
-footer .container {
+footer
+.container {
   width: auto;
   a { color: $grayDark; }
 }
@@ -131,61 +170,75 @@ aside {
   max-width: 1050px;
 }
 
-.navbar .nav {
+.navbar
+.nav {
   margin-right: 0; 
 }
 
-.navbar .nav:first-child {
+.navbar
+.nav:first-child {
   border-bottom: 1px solid $border;
 }
 
-.navbar .navbar-inner {
+.navbar
+.navbar-inner {
   padding: 0;
   border-radius: 0;
   border-color: $border;
 }
 
-.navbar .nav li {
+.navbar
+.nav li {
   display: table-cell;
   width: 1%;
   float: none;
 }
 
-.navbar .nav li a {
+.navbar
+.nav li a {
   text-align: center;
   border-left: 1px solid rgba(255, 255, 255, .75);
   border-right: 1px solid rgba(0, 0, 0, .1);
 }
 
-.navbar .nav li:first-child a {
+.navbar
+.nav li:first-child a {
   border-left: 0;
   border-radius: 0;
 }
 
-.navbar .nav li:last-child a {
+.navbar
+.nav li:last-child a {
   border-right: 0;
   border-radius: 0;
 }
 
 .navbar .nav .active > a,
-.navbar .nav .active:hover > a
- {
+.navbar .nav .active:hover > a {
   background: transparent;
   box-shadow: none;
 }
 
 /* Home page Items */
 
-#close_home { padding: 6px 15px; }
-.center { text-align: center; }
-
-.logo { 
-margin: 0 48px 10px; 
+#close_home {
+   padding: 6px 15px; 
 }
 
-.home-page { margin: 60px 0; }
+.center {
+  text-align: center; 
+}
 
-.home-page .lead {
+.logo {
+  margin: 0 48px 10px; 
+}
+
+.home-page { 
+  margin: 60px 0; 
+}
+
+.home-page
+.lead {
   font-size: 24px;
   line-height: 1.25;
 }
@@ -200,18 +253,22 @@ margin: 0 48px 10px;
   @include wells;
 }
 
-.well-inner-header, .modal_header {
+.well-inner-header,
+.modal_header {
   line-height: 10px;
   margin-bottom: 4px;
 }
 
-.well-inner .content, .modal_content {
+.well-inner .content,
+.modal_content {
   display: block;
   line-height: 19px;
   margin-left: 58px;
 }
 
-.well-inner hr { margin: -10px 0 20px; }
+.well-inner hr { 
+  margin: -10px 0 20px; 
+}
 
 .well-footer {
   font-size: 13px;
@@ -225,12 +282,13 @@ margin: 0 48px 10px;
 
 /* Administrative actions */
 
-
 .share-actions li {
   display: inline-block;
 }
 
-.share-actions a { display: inline; }
+.share-actions a { 
+  display: inline; 
+}
 
 /* Modal Config */
 
@@ -269,7 +327,8 @@ margin: 0 48px 10px;
   @include modal-header;
 }
 
-.modal-header .modal-title {
+.modal-header
+.modal-title {
   cursor: move;
   width: 75%;
   margin: 0px auto;
@@ -279,24 +338,22 @@ margin: 0 48px 10px;
   text-shadow: 0px 1px 0px $white;
 }
 
-/*
-#likes {
-  cursor: default;
-  background-color: $mainGray;
-  border-top: 1px solid $borderDarker;
-  min-height: 40px;
-  a { margin-top: 10px; }
-  strong { font-size: 16px; }
+.modal-body { 
+  overflow: hidden; 
 }
-*/
 
-.modal-body { overflow: hidden; }
+.modal-backdrop, 
+.modal-backdrop.fade.in { 
+  opacity: .4; 
+}
 
-.modal-backdrop, .modal-backdrop.fade.in { opacity: .4; }
+.username_modal {
+  display: block;
+}
 
-.username_modal { display: block; }
-.modal-footer { cursor: move; }
-
+.modal-footer { 
+  cursor: move;
+}
 
 /* Articles Blogs News */
 
@@ -323,7 +380,8 @@ margin: 0 48px 10px;
   font-weight: normal;
 }
 
-.bio, .title {
+.bio,
+.title {
   margin-bottom: 0px;
   font: italic 14px/18px Georgia, "Times New Roman", serif;
   color: $grayLarge;
@@ -383,7 +441,9 @@ tbody .price {
 /* various icons */
 
 [class^="icon-pencil"], [class*=" icon-pencil"],
-[class^="icon-plus-sign"], [class*=" icon-plus-sign"] { margin-right: 8px; }
+[class^="icon-plus-sign"], [class*=" icon-plus-sign"] {
+  margin-right: 8px; 
+}
 
 /* alert messages */
 
@@ -417,7 +477,7 @@ tbody .price {
 
 /* responsive styles */
 
-@media (max-width: 480px) {
+@media ( max-width: 480px ) {
 
   body {
     padding-left: 0;
@@ -463,15 +523,6 @@ tbody .price {
   }
 
   .modal.fade.in {
-    top: 185px;
+    top: 200px;
   }
-}
-
-/* debugging for development */
-
-.debug_dump {
-  clear: both;
-  width: 100%;
-  margin-top: 3em;
-  @include paddings; @include forms;
 }

@@ -5,8 +5,8 @@
   <li class=""><%= link_to "Blog", :blogs %></li>
 </ul>
 
-  <% if signed_in? %>
-    <ul class="nav pull-right">
-    <%= render 'layouts/usernav' if signed_in? %>
-    </ul>
-  <% end %>
+<% if signed_in? %>
+  <ul class="nav pull-right">
+    <%= render 'layouts/usernav' %>
+  </ul>
+<% end %>
