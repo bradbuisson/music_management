@@ -78,14 +78,6 @@ class BlogsController < ApplicationController
     end
   end
 
-  def feed
-    @blogs = Blog.all
-    respond_to do |format|
-      format.atom
-      format.xml { render :xml => @blogs }
-    end
-  end
-
 private
 
   def remove_stale_tags
