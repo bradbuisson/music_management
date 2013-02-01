@@ -1,5 +1,4 @@
 class Show < ActiveRecord::Base
-  include GsubHelper
   attr_accessible :date, :time, :venue, :address, :price
 
   validates_presence_of :date, :time, :venue, :address

@@ -6,20 +6,17 @@ class ShowsController < ApplicationController
     @shows = Show.page(params[:page])
 
     respond_to do |format|
-      format.atom
       format.html
-      format.xml { render xml: @shows }
       format.json { render json: @shows }
     end
   end
 
   def show
     @show = Show.find(params[:id])
-    @title = "#{@show.venue} on #{@show.date}"
+    @title = "#{@show.venue} on #{@show.date} at #{@show.time}"
 
     respond_to do |format|
       format.html
-      format.xml { render xml: @show }
       format.json { render json: @show }
     end
   end

@@ -1,6 +1,5 @@
 class Blog < ActiveRecord::Base
   include TimestampHelper
-  include GsubHelper
   attr_accessible :title, :content, :published, :tag_names
   attr_writer :tag_names
 

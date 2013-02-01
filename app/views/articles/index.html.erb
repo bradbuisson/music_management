@@ -1,7 +1,5 @@
 <% content_for :head do %>
   <% provide(:title, @title) %>
-    <%= auto_discovery_link_tag(:atom, { action: "index" }, 
-                                        { title: "Sam Raines Official Music News" } )%>
 <% end %>
 
 <a href="/articles.atom" id="atom" title="Subscribe">
