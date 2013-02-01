@@ -10,12 +10,12 @@
     <li class=""><a href="<%= new_show_path %>" 
       data-remote="true" data-toggle="modal" 
       data-target="#modal-window"> New Show </a></li>
-    <li class=""><a href="<%= new_blog_path %>" 
-      data-remote="true" data-toggle="modal" 
-      data-target="#modal-window"> New Blog </a></li>
     <li class=""><a href="<%= new_article_path %>" 
       data-remote="true" data-toggle="modal" 
       data-target="#modal-window"> New Article </a></li>
+    <li class=""><a href="<%= new_blog_path %>" 
+      data-remote="true" data-toggle="modal" 
+      data-target="#modal-window"> New Blog </a></li>
 
     <li class="hidden-phone"><%= link_to "Account", edit_user_path(current_user) %></li>
     <li class="hidden-phone"><%= link_to "Signout", :signout, method: "delete" %></li>
