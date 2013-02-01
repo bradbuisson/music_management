@@ -78,7 +78,7 @@ class ArticlesController < ApplicationController
     @articles = Article.all
     respond_to do |format|
       format.atom
-      format.xml { render :xml => @articles }
+      format.xml { render :json => @articles }
     end
   end
 end
