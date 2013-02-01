@@ -8,7 +8,9 @@ class BlogsController < ApplicationController
     @blogs = Blog.published.page(params[:page])
 
     respond_to do |format|
+      format.atom
       format.html
+      format.xml { render xml: @blogs }
       format.json { render json: @blogs }
     end
   end
@@ -16,6 +18,12 @@ class BlogsController < ApplicationController
   def show
     @blog = Blog.find(params[:id])
     @title = @blog.title
+
+    respond_to do |format|
+      format.html
+      format.xml { render xml: @blog }
+      format.json { render json: @blog }
+    end
   end
 
   def new

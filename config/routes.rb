@@ -1,10 +1,9 @@
 SamuelRainesMusic::Application.routes.draw do
   resources :users, :only => [:edit, :update]
   resources :sessions, :only => [:new, :create, :destroy]
-  resources :articles do
-    get :feed, :on => :collection
-  end
-  resources :shows, :blogs
+  resources :articles
+  resources :shows
+  resources :blogs
   resources :tags, :only => :show
 
   root :to => 'dashboard#home', :as => :home

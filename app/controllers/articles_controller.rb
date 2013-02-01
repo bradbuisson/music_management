@@ -1,12 +1,14 @@
 class ArticlesController < ApplicationController
-  before_filter :signed_in_user, except: [:index, :feed]
+  before_filter :signed_in_user, except: :index
 
   def index
     @title = "News"
     @articles = Article.page(params[:page])
 
     respond_to do |format|
+      format.atom
       format.html
+      format.xml { render xml: @articles }
       format.json { render json: @articles }
     end
   end
@@ -14,6 +16,12 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
     @title = @article.content
+
+    respond_to do |format|
+      format.html
+      format.xml { render xml: @article }
+      format.json { render json: @article }
+    end
   end
 
   def new
@@ -71,14 +79,6 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to articles_url, notice: "Your article was removed" }
       format.json { head :no_content }
-    end
-  end
-
-  def feed
-    @articles = Article.all
-    respond_to do |format|
-      format.atom
-      format.xml { render :xml => @articles }
     end
   end
 end

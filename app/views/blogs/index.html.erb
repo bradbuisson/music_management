@@ -1,8 +1,14 @@
 <% content_for :head do %>
   <% provide(:title, @title) %>
+  <%= auto_discovery_link_tag(:atom, { action: "index" }, 
+                                      { title: "Sam Raines Official Music Blog" } )%>
 <% end %>
 
-<div class="row-fluid">
+<a href="/blogs.atom" id="atom" title="Subscribe">
+  <%= image_tag("rss.png") %>
+</a>
+
+<div class="row-fluid blogs-all">
   <aside class="span9">
     <% if signed_in? && @unpublished.any? %>
       <legend> Unpublished Blogs </legend>

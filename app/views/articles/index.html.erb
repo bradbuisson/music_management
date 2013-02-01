@@ -1,9 +1,10 @@
 <% content_for :head do %>
   <% provide(:title, @title) %>
+    <%= auto_discovery_link_tag(:atom, { action: "index" }, 
+                                        { title: "Sam Raines Official Music News" } )%>
 <% end %>
-<a id="atom" class="pull-right"
-    href="<%= articles_path %>/feed.atom" 
-    title="Subscribe">
+
+<a href="/articles.atom" id="atom" title="Subscribe">
   <%= image_tag("rss.png") %>
 </a>
 

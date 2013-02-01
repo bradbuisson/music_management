@@ -1,17 +1,6 @@
 <% content_for :head do %>
   <% provide(:title, @title) %>
-  <%= auto_discovery_link_tag(:atom, { action: "index" }, 
-                                      { title: "Sam Raines Official Music Show Times" } )%>
 <% end %>
-
-<a href="/shows.atom" id="atom" title="Subscribe">
-  <%= image_tag("rss.png") %>
-</a>
-
-  <div class="alert alert-block visible-phone">
-    <h2>Hiya!</h2>
-        Sign on to your desktop to view further details.
-  </div>
 
   <table class="table table-bordered table-hover">
     <thead>
@@ -27,6 +16,6 @@
       </tr>
     </thead>
     <tbody>
-      <%= render @shows %>
+      <%= render @show %>
     </tbody>
   </table>

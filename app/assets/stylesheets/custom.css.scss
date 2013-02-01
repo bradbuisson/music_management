@@ -348,6 +348,10 @@ aside {
 
 .articles {
   margin-left: 0;
+}
+
+.articles,
+.blogs-all {
   clear: both;
 }
 
@@ -359,6 +363,13 @@ aside {
 
 #atom {
   margin-right: 15px;
+  margin-bottom: 10px;
+  float: right;;
+  @include atom-icon;
+}
+
+.alert-block {
+  clear: both;
 }
 
 .timestamp {
@@ -401,8 +412,9 @@ aside {
 /* Shows table */
 
 table {
-  @include tables-shadow;
+  clear: both;
   text-shadow: 0px 1px 0px $white;
+  @include tables-shadow;
 }
 
 thead { 
