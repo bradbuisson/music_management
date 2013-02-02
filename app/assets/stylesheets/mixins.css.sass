@@ -24,35 +24,17 @@
   background-image: -o-linear-gradient(top, $white, $mainGray)
   background-image: linear-gradient(to bottom, $white, $mainGray)
 
-@mixin hero
+@mixin circles
   -webkit-border-radius: 10px
   -moz-border-radius: 10px
   -o-border-radius: 10px
   border-radius: 10px
 
-@mixin shadows
-  -webkit-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1)
-  -moz-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1)
-  -o-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1)
-  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1)
-
-@mixin shadows-header
-  -webkit-box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1) inset, 0px 1px 6px rgba(0, 0, 0, 0.1)
-  -moz-box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1) inset, 0px 1px 6px rgba(0, 0, 0, 0.1)
-  -o-box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1) inset, 0px 1px 6px rgba(0, 0, 0, 0.1)
-  box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1) inset, 0px 1px 6px rgba(0, 0, 0, 0.1)
-
 @mixin modules
-  -webkit-border-radius: 6px
-  -moz-border-radius: 6px
-  -o-border-radius: 6px
-  border-radius: 6px
-
-@mixin wells
-  -webkit-border-radius: 0
-  -moz-border-radius: 0
-  -o-border-radius: 0
-  border-radius: 0
+  -webkit-border-radius: 5px
+  -moz-border-radius: 5px
+  -o-border-radius: 5px
+  border-radius: 5px
 
 @mixin grads
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from($white), to($moduleGray))
@@ -60,6 +42,12 @@
   background-image: -moz-linear-gradient(top, $white, $moduleGray)
   background-image: -o-linear-gradient(top, $white, $moduleGray)
   background-image: linear-gradient(to bottom, $white, $moduleGray)
+
+@mixin holdsters
+  -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1)
+  -moz-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1)
+  -o-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1)
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1)
 
 @mixin modal-header
   -webkit-border-radius: 6px 6px 0px 0px
@@ -70,6 +58,16 @@
   -o-box-shadow: inset 0px 1px 0px $white
   -moz-box-shadow: inset 0px 1px 0px $white
   box-shadow: inset 0px 1px 0px $white
+
+@mixin well-header
+  -webkit-border-radius: 5px 5px 0px 0px
+  -moz-border-radius: 5px 5px 0px 0px
+  border-radius: 5px 5px 0px 0px
+
+@mixin well-bottom
+  -webkit-border-radius: 0px 0px 5px 5px
+  -moz-border-radius: 0px 0px 5px 5px
+  border-radius: 0px 0px 5px 5px
 
 @mixin modal
   @include modules

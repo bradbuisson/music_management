@@ -148,7 +148,7 @@ aside {
   border-bottom-width: 0;
   min-height: 100%;
   margin: -1.4em 48px auto;
-  padding: 3em 1em 2em;
+  padding: 4em 1em 2em;
 }
 
 .container {
@@ -230,12 +230,7 @@ aside {
 }
 
 .navbar
-.nav li a:hover
-{
-  color: $textGrayLight;
-  @include hovers;
-}
-
+.nav li a:hover,
 .navbar
 .nav
 .active:hover > a,
@@ -243,6 +238,10 @@ aside {
 .nav li a:hover:active {
   color: $textGrayLight;
   @include hovers;
+}
+
+.dropdown-menu li > a {
+  @include circles;
 }
 
 #home {
@@ -264,27 +263,113 @@ aside {
 }
 
 .logo {
-  margin: 0 48px 10px; 
+  margin: 0 48px 10px;
+  letter-spacing: 1px;
 }
 
-.home-page { 
-  margin: 60px 0; 
+.home-page .holdster {
+  margin: 0 auto;
+  padding: 8px;
+  padding-top: 3px;
+  border: 1px solid $moduleBorder;
+  border-top: none;
 }
 
-.home-page
-.lead {
-  font-size: 24px;
-  line-height: 1.25;
+.home-page #module {
+  opacity: .8;
+  margin-bottom: 20px;
+  @include modules;
+  &:hover {
+    opacity: 1;
+    @include holdsters;
+  }
+}
+
+.home-page #module #atom {
+  box-shadow: none;
+}
+
+.home-page #module:hover #atom {
+  @include atom-icon;
+}
+
+.home-page .well-body {
+  padding-left: 0;
+}
+
+.home-page .articles .timestamp {
+  font-size: 13px;
+  float: none;
+}
+
+.home-page .articles .well-footer {
+  margin-left: 0;
+  margin-top: -12px;
+}
+
+.home-page .articles .share-actions {
+  margin-top: 0;
+}
+
+.home-page .well-header {
+  padding: 10px;
+}
+
+.home-page #atom {
+  margin-top: -5px;
+  margin-right: 0;
+}
+
+.home-page .show-title {
+  margin-bottom: 15px;
+}
+
+.home-page .shows {
+  margin-top: 5px;
+  font-size: 15px;
+  line-height: 24px;
+  letter-spacing: 1px;
+}
+
+.show-actions {
+  float: right;
+  margin-top: -40px;
 }
 
 /* Default Items Display */
+
+.well-header, .well-bottom {
+  border: 1px solid $moduleBorder;
+  font-weight: bold;
+  text-shadow: 0px 1px 0px $white;
+  min-height: 17px;
+  padding: 8px;
+  @include grads;
+}
+
+.well-header {
+  @include well-header;
+}
+
+.well-header .title {
+  font: italic 18px Georgia, "Times New Roman", serif;
+  letter-spacing: 2px;
+  color: $grayLarge;
+}
+
+.well-bottom {
+  border-top: 0;
+  @include well-bottom;
+}
 
 .well-body {
   background: transparent;
   border-bottom: 1px solid $moduleBorder;
   margin: 0;
   padding: 12px;
-  @include wells;
+  &:last-child {
+    border-bottom: 0;
+  }
 }
 
 .well-inner-header,
@@ -300,10 +385,6 @@ aside {
   margin-left: 58px;
 }
 
-.well-inner hr { 
-  margin: -10px 0 20px; 
-}
-
 .well-footer {
   font-size: 13px;
   margin-left: 58px;
@@ -314,85 +395,14 @@ aside {
   margin-bottom: -6px;
 }
 
-/* Administrative actions */
-
-.share-actions li {
-  display: inline-block;
-}
-
-.share-actions a { 
-  display: inline; 
-}
-
-/* Modal Config */
-
-.modal-form form textarea {
-  color: $textGrayLight;
-  font-size: 14px;
-  height: 78px !important;
-}
-
-.modal-form form input {
-  display: block;
-  margin-bottom: 8px;
-}
-
-.modal {
-  margin-top: -195px;
-  background: none repeat scroll 0% 0% transparent;
-  overflow: visible;
-  border: 0;
-  box-shadow: none;
-  outline: none;
-}
-
-.modal-content {
-  position: relative;
-  background-color: $white;
-  @include modal;
-}
-
-.modal-header {
-  cursor: default;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  background-color: $userBorder;
-  border-bottom: 1px solid $borderDarker;
-  @include modal-header;
-}
-
-.modal-header
-.modal-title {
-  cursor: move;
-  width: 75%;
-  margin: 0px auto;
-  font-weight: bold;
-  line-height: 18px;
-  text-align: center;
-  text-shadow: 0px 1px 0px $white;
-}
-
-.modal-body { 
-  overflow: hidden; 
-}
-
-.modal-backdrop, 
-.modal-backdrop.fade.in { 
-  opacity: .4; 
-}
-
-.username_modal {
-  display: block;
-}
-
-.modal-footer { 
-  cursor: move;
-}
-
 /* Articles Blogs News */
 
 .articles {
   margin-left: 0;
+}
+
+.articles .share-actions {
+  margin-top: -15px;
 }
 
 .articles,
@@ -406,10 +416,16 @@ aside {
   line-height: 30px;
 }
 
+.time-ago a {
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-style: italic;
+}
+
 #atom {
   margin-right: 15px;
   margin-bottom: 10px;
-  float: right;;
+  float: right;
   @include atom-icon;
 }
 
@@ -484,14 +500,87 @@ tbody .price {
   }
 }
 
-/* various icons */
+/* Administrative actions */
+
+.share-actions li {
+  display: inline-block;
+}
+
+.share-actions a { 
+  display: inline; 
+}
+
+/* Modal overrides */
+
+.modal-form form textarea {
+  color: $textGrayLight;
+  font-size: 14px;
+  height: 78px !important;
+}
+
+.modal-form form input {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.modal {
+  margin-top: -195px;
+  background: none repeat scroll 0% 0% transparent;
+  overflow: visible;
+  border: 0;
+  box-shadow: none;
+  outline: none;
+}
+
+.modal-content {
+  position: relative;
+  background-color: $white;
+  @include modal;
+}
+
+.modal-header {
+  cursor: default;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-color: $userBorder;
+  border-bottom: 1px solid $borderDarker;
+  @include modal-header;
+}
+
+.modal-header
+.modal-title {
+  cursor: move;
+  width: 75%;
+  margin: 0px auto;
+  font-weight: bold;
+  line-height: 18px;
+  text-align: center;
+  text-shadow: 0px 1px 0px $white;
+}
+
+.modal-body { 
+  overflow: hidden; 
+}
+
+.modal-backdrop, 
+.modal-backdrop.fade.in { 
+  opacity: .4; 
+}
+
+.username_modal {
+  display: block;
+}
+
+.modal-footer { 
+  cursor: move;
+}
+
+/* various icons and alert messages */
 
 [class^="icon-pencil"], [class*=" icon-pencil"],
 [class^="icon-plus-sign"], [class*=" icon-plus-sign"] {
   margin-right: 8px; 
 }
-
-/* alert messages */
 
 #alert-notice {
   padding-right: 0;
@@ -557,6 +646,19 @@ tbody .price {
     padding-right: 0;
   }
 
+  .home-page #module {
+    opacity: 1;
+    @include holdsters;
+  }
+
+  .home-page #module #atom {
+    @include atom-icon;
+  }
+
+  .home-page .shows {
+    line-height: 18px;
+  }
+
   #home {
     border-left: none;
   }
@@ -565,8 +667,8 @@ tbody .price {
     border-right: none;
   }
 
-  .home-page {
-    margin: 0;
+  .well-body {
+    padding: 7px;
   }
 
   .title {
@@ -582,13 +684,13 @@ tbody .price {
   }
 
   .format h1 {
-    font: bold 16px/20px Georgia, "Times New Roman", serif;
+    font: bold 18px/22px Georgia, "Times New Roman", serif;
     text-align: center;
     letter-spacing: 1px;
   }
 
   .articles p {
-    margin-top: 40px;
+    margin-top: 0;
   }
 
   thead { 

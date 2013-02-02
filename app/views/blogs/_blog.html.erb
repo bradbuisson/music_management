@@ -7,8 +7,15 @@
     </span>
   </h2>
 
-    <%= render(partial: ("shared/content"),
-                locals: { item: blog }) %>
+  <div class="format">
+    <% if blog.content.length >= 500 && !identified?(blog) %>
+      <%= auto_link(truncate(blog.content, length: 500)) %>
+      <%= link_to "read more", blog, style: "font-size: 13px;" %>
+    <% else %>
+      <%= auto_link(blog.content, html: { target: '_blank' }) do |content|
+          truncate(content, length: 30) end %>
+    <% end %>
+  </div>
 
   <% if blog.tags.any? %>
     <span class="bio">
