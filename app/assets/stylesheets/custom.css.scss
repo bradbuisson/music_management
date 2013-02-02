@@ -213,9 +213,13 @@ aside {
 
 .navbar
 .nav
-.active > a,
+.active > a {
+  @include active-link;
+}
+
 .navbar
-.nav li a:hover {
+.nav li a:hover
+{
   @include hovers;
 }
 
@@ -224,7 +228,7 @@ aside {
 .active:hover > a,
 .navbar
 .nav li a:hover:active {
-  @include active-hovers;
+  @include hovers;
 }
 
 #home {

@@ -97,14 +97,16 @@
   -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)
   box-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)
 
-@mixin hovers
-  -webkit-box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.05), inset 0px 1px 0px $white
-  -moz-box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.05), inset 0px 1px 0px $white
-  -o-box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.05), inset 0px 1px 0px $white
-  box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.05), inset 0px 1px 0px $white
+@mixin active-link
+  background-image: -moz-linear-gradient(top, $white, $innerBody)
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($white), to($innerBody))
+  background-image: -webkit-linear-gradient(top, $white, $innerBody)
+  background-image: -o-linear-gradient(top, $white, $innerBody)
+  background-image: linear-gradient(to bottom, $white, $innerBody)
 
-@mixin active-hovers
-  -webkit-box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.07), inset 0px 1px 0px $white
-  -moz-box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.07), inset 0px 1px 0px $white
-  -o-box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.07), inset 0px 1px 0px $white
-  box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.07), inset 0px 1px 0px $white
+@mixin hovers
+  background-image: -moz-linear-gradient(top, $moduleGray, $white)
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($moduleGray), to($white))
+  background-image: -webkit-linear-gradient(top, $moduleGray, $white)
+  background-image: -o-linear-gradient(top, $moduleGray, $white)
+  background-image: linear-gradient(to bottom, $moduleGray, $white)
