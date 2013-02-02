@@ -3,16 +3,19 @@
 @mixin paddings
   -webkit-box-sizing: border-box
   -moz-box-sizing: border-box
+  -o-box-sizing: border-box
   box-sizing: border-box
 
 @mixin forms
   @include paddings
   -webkit-border-radius: 0 0 4px 4px
   -moz-border-radius: 0 0 4px 4px
+  -o-border-radius: 0 0 4px 4px
   border-radius: 0 0 4px 4px
-  -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05) inset
-  -moz-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05) inset
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05) inset
+  -webkit-box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.05)
+  -moz-box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.05)
+  -o-box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.05)
+  box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.05)
 
 @mixin footer
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from($white), to($mainGray))
@@ -24,16 +27,19 @@
 @mixin hero
   -webkit-border-radius: 10px
   -moz-border-radius: 10px
+  -o-border-radius: 10px
   border-radius: 10px
 
 @mixin shadows
   -webkit-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1)
   -moz-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1)
+  -o-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1)
   box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1)
 
 @mixin shadows-header
   -webkit-box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1) inset, 0px 1px 6px rgba(0, 0, 0, 0.1)
   -moz-box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1) inset, 0px 1px 6px rgba(0, 0, 0, 0.1)
+  -o-box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1) inset, 0px 1px 6px rgba(0, 0, 0, 0.1)
   box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1) inset, 0px 1px 6px rgba(0, 0, 0, 0.1)
 
 @mixin grads
@@ -46,30 +52,36 @@
 @mixin modules
   -webkit-border-radius: 6px
   -moz-border-radius: 6px
+  -o-border-radius: 6px
   border-radius: 6px
 
 @mixin wells
   -webkit-border-radius: 0
   -moz-border-radius: 0
+  -o-border-radius: 0
   border-radius: 0
 
 @mixin modal-header
   -webkit-border-radius: 6px 6px 0px 0px
   -moz-border-radius: 6px 6px 0px 0px
+  -o-border-radius: 6px 6px 0px 0px
   border-radius: 6px 6px 0px 0px
-  -webkit-box-shadow: 0px 1px 0px $white inset
-  -moz-box-shadow: 0px 1px 0px $white inset
-  box-shadow: 0px 1px 0px $white inset
+  -webkit-box-shadow: inset 0px 1px 0px $white
+  -o-box-shadow: inset 0px 1px 0px $white
+  -moz-box-shadow: inset 0px 1px 0px $white
+  box-shadow: inset 0px 1px 0px $white
 
 @mixin modal
   @include modules
   -webkit-box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4)
   -moz-box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4)
+  -o-box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4)
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4)
 
 @mixin tables-shadow
   -webkit-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1)
   -moz-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1)
+  -o-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1)
   box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1)
 
 @mixin tables
@@ -82,4 +94,17 @@
 @mixin atom-icon
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)
   -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)
+  -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)
   box-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)
+
+@mixin hovers
+  -webkit-box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.05), inset 0px 1px 0px $white
+  -moz-box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.05), inset 0px 1px 0px $white
+  -o-box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.05), inset 0px 1px 0px $white
+  box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.05), inset 0px 1px 0px $white
+
+@mixin active-hovers
+  -webkit-box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.07), inset 0px 1px 0px $white
+  -moz-box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.07), inset 0px 1px 0px $white
+  -o-box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.07), inset 0px 1px 0px $white
+  box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.07), inset 0px 1px 0px $white

@@ -160,20 +160,23 @@ aside {
   margin-right: 48px;
 }
 
-.navbar
-.nav {
-  margin-right: 0;
+.navigation {
+  padding-left: 18%;
+  padding-right: 18%;
 }
 
-#fat-menu {
+.navbar
+.nav.pull-right {
   border-top: 1px solid $border;
+  text-align: center;
+  border-right: 0;
 }
 
 .navbar
 .navbar-inner {
   padding: 0;
-  border-radius: 0;
   border-color: $border;
+  @include modal-header;
 }
 
 .navbar
@@ -184,20 +187,15 @@ aside {
 }
 
 .navbar
-.nav li a {
+.navigation li a {
   text-align: center;
-  border-left: 1px solid rgba(255, 255, 255, 0.75);
+  letter-spacing: 2px;
+  border-left: 0;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .navbar
-.nav li:first-child a {
-  border-left: 0;
-  border-radius: 0;
-}
-
-.navbar
-.nav li:last-child a {
+.navigation li:last-child a {
   border-right: 0;
   border-radius: 0;
 }
@@ -206,6 +204,30 @@ aside {
 .navbar .nav .active:hover > a {
   background: transparent;
   box-shadow: none;
+}
+
+.navbar
+.nav
+.active > a,
+.navbar
+.nav li a:hover {
+  @include hovers;
+}
+
+.navbar
+.nav
+.active:hover > a,
+.navbar
+.nav li a:hover:active {
+  @include active-hovers;
+}
+
+#home {
+  border-left: 1px solid $border;
+}
+
+#blog {
+  border-right: 1px solid $border;
 }
 
 /* Home page Items */
@@ -491,7 +513,7 @@ tbody .price {
   .logo {
     margin-left: 0;
     margin-right: 0;
-    }
+  }
 
   footer,
   .page-wrapper {
@@ -500,6 +522,24 @@ tbody .price {
 
   .navbar { 
     min-width: 305px; 
+  }
+
+  .navbar
+  .navbar-inner {
+    border-radius: 0;
+  }
+
+  .navigation {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #home {
+    border-left: none;
+  }
+
+  #blog {
+    border-right: none;
   }
 
   .home-page {
