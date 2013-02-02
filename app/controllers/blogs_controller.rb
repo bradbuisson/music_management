@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-  before_filter :signed_in_user, except: :index
+  before_filter :signed_in_user, except: [:index, :show]
   before_filter :remove_stale_tags, only: [:create, :update, :destroy]
 
   def index

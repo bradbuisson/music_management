@@ -42,13 +42,6 @@
   -o-box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1) inset, 0px 1px 6px rgba(0, 0, 0, 0.1)
   box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1) inset, 0px 1px 6px rgba(0, 0, 0, 0.1)
 
-@mixin grads
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($white), to($wellGray))
-  background-image: -webkit-linear-gradient(top, $white, $wellGray)
-  background-image: -moz-linear-gradient(top, $white, $wellGray)
-  background-image: -o-linear-gradient(top, $white, $wellGray)
-  background-image: linear-gradient(to bottom, $white, $wellGray)
-
 @mixin modules
   -webkit-border-radius: 6px
   -moz-border-radius: 6px
@@ -60,6 +53,13 @@
   -moz-border-radius: 0
   -o-border-radius: 0
   border-radius: 0
+
+@mixin grads
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($white), to($moduleGray))
+  background-image: -webkit-linear-gradient(top, $white, $moduleGray)
+  background-image: -moz-linear-gradient(top, $white, $moduleGray)
+  background-image: -o-linear-gradient(top, $white, $moduleGray)
+  background-image: linear-gradient(to bottom, $white, $moduleGray)
 
 @mixin modal-header
   -webkit-border-radius: 6px 6px 0px 0px

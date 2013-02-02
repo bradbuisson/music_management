@@ -177,6 +177,16 @@ aside {
   border-right: 0;
 }
 
+.nav.pull-right #fat-menu ul li > a:hover {
+  color: $white;
+}
+
+.navbar
+.nav.pull-right li a:first-child:hover {
+  color: $navGrayActive;
+  background-image: none;
+}
+
 .navbar
 .navbar-inner {
   padding: 0;
@@ -193,6 +203,7 @@ aside {
 
 .navbar
 .navigation li a {
+  color: $navGray;
   text-align: center;
   letter-spacing: 2px;
   border-left: 0;
@@ -214,12 +225,14 @@ aside {
 .navbar
 .nav
 .active > a {
+  color: $textGrayLight;
   @include active-link;
 }
 
 .navbar
 .nav li a:hover
 {
+  color: $textGrayLight;
   @include hovers;
 }
 
@@ -228,6 +241,7 @@ aside {
 .active:hover > a,
 .navbar
 .nav li a:hover:active {
+  color: $textGrayLight;
   @include hovers;
 }
 
