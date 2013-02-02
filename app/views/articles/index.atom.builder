@@ -5,7 +5,7 @@ atom_feed do |feed|
   feed.updated( latest_article && latest_article.updated_at )
 
   @articles.each do |article|
-    feed.entry(article) do |entry|
+    feed.entry( article ) do |entry|
       entry.title( article.content )
       entry.summary :type => 'xhtml' do |xhtml|
         xhtml.p( "Posted on #{article.timestamp}." )

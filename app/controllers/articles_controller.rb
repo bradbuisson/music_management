@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_filter :signed_in_user, except: :index
+  before_filter :signed_in_user, except: [:index, :show]
 
   def index
     @title = "News"
