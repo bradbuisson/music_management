@@ -1,26 +1,31 @@
 @import "bootstrap";
 @import "mixins";
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
 
 /* global configurations */
 
 html { 
-  overflow-y: scroll; 
-}
-
-html,
-body {
+  overflow-y: scroll;
   height: 100%;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
-  background-image: url(image_path('ricepaper2.png'));
-  font-family: "Helvetica Neue", Arial, sans-serif; 
+  background-image: url(image_path("ricepaper2.png"));
+  font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
   font-size: 14px;
   line-height: 18px;
   padding-top: 70px;
 }
 
 @import "bootstrap-responsive";
+
+a {
+  color: $softGreen;
+  &:hover {
+    color: $softerGreen;
+  }
+}
 
 input,
 textarea,
@@ -142,7 +147,7 @@ aside {
 /* Page Layout */
 
 .page-wrapper {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-image: url(image_path("lightpaperfibers.png"));
   border: 1px solid $userBorder;
   border-top-width: 0;
   border-bottom-width: 0;
@@ -192,6 +197,7 @@ aside {
   padding: 0;
   border-color: $border;
   @include modal-header;
+  @include buttons;
 }
 
 .navbar
@@ -268,6 +274,7 @@ aside {
 }
 
 .home-page .holdster {
+  background-color: rgba(255, 255, 255, 0.5);
   margin: 0 auto;
   padding: 8px;
   padding-top: 3px;
@@ -276,25 +283,25 @@ aside {
 }
 
 .home-page #module {
-  opacity: .8;
   margin-bottom: 20px;
   @include modules;
-  &:hover {
-    opacity: 1;
-    @include holdsters;
-  }
-}
-
-.home-page #module #atom {
-  box-shadow: none;
-}
-
-.home-page #module:hover #atom {
-  @include atom-icon;
+  @include holdsters;
 }
 
 .home-page .well-body {
   padding-left: 0;
+}
+
+.home-page .title {
+  font-size: 21px;
+}
+
+.format h1:first-child {
+  margin-top: 1em;
+}
+
+.home-page .articles p {
+  color: $textGrayLight;
 }
 
 .home-page .articles .timestamp {
@@ -311,8 +318,8 @@ aside {
   margin-top: 0;
 }
 
-.home-page .well-header {
-  padding: 10px;
+.home-page h2 .timestamp {
+  margin-top: 5px;
 }
 
 .home-page #atom {
@@ -328,7 +335,6 @@ aside {
   margin-top: 5px;
   font-size: 15px;
   line-height: 24px;
-  letter-spacing: 1px;
 }
 
 .show-actions {
@@ -341,20 +347,21 @@ aside {
 .well-header, .well-bottom {
   border: 1px solid $moduleBorder;
   font-weight: bold;
-  text-shadow: 0px 1px 0px $white;
+  text-shadow: 0px 1px 1px $white;
   min-height: 17px;
-  padding: 8px;
+  padding: 6px;
   @include grads;
 }
 
 .well-header {
+  text-align: center;
   @include well-header;
 }
 
 .well-header .title {
-  font: italic 18px Georgia, "Times New Roman", serif;
+  font-size: 17px;
   letter-spacing: 2px;
-  color: $grayLarge;
+  color: $navGrayActive;
 }
 
 .well-bottom {
@@ -435,15 +442,19 @@ aside {
 
 .timestamp {
   font-size: 15px;
-  color: $timestamp;
   float: right;
   font-weight: normal;
+}
+
+h2 .timestamp {
+  letter-spacing: 1px;
+  color: $smoothGreen;
 }
 
 .bio,
 .title {
   margin-bottom: 0px;
-  font: italic 14px/18px Georgia, "Times New Roman", serif;
+  font: bold 14px/18px Georgia, "Times New Roman", serif;
   color: $grayLarge;
 }
 
@@ -467,7 +478,8 @@ aside {
 .format h1 {
   margin-bottom: 10px;
   font: bold 18px/22px Georgia, "Times New Roman", serif;
-  color: $grayLarge;
+  text-decoration: underline;
+  color: $navGray;
 }
 
 /* Shows table */
@@ -646,15 +658,6 @@ tbody .price {
     padding-right: 0;
   }
 
-  .home-page #module {
-    opacity: 1;
-    @include holdsters;
-  }
-
-  .home-page #module #atom {
-    @include atom-icon;
-  }
-
   .home-page .shows {
     line-height: 18px;
   }
@@ -681,6 +684,10 @@ tbody .price {
 
   .format {
     font-size: 14px;
+  }
+
+  .format h1:first-child {
+    margin-top: 2em;
   }
 
   .format h1 {
