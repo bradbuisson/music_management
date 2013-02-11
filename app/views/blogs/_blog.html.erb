@@ -8,7 +8,7 @@
   </h2>
 
   <div class="format">
-    <% if blog.content.length >= 500 && !identified?(blog) %>
+    <% unless identified?(blog) %>
       <%= auto_link(truncate(blog.content, length: 500)) %>
       <%= link_to "read more", blog, style: "font-size: 13px;" %>
     <% else %>
