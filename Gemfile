@@ -1,12 +1,12 @@
 source 'https://rubygems.org/'
 
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.12'
 gem 'thin'
 gem 'bcrypt-ruby'
 gem 'bootstrap-sass'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
-gem 'jquery-rails', '2.1.4'
+gem 'jquery-rails'
 gem 'rails_autolink'
 
 group :assets do
