@@ -199,7 +199,7 @@ aside {
   padding: 0;
   border-color: $border;
   @include modal-header;
-  @include buttons;
+  @include grads;
 }
 
 .navbar
@@ -538,7 +538,6 @@ tbody .price {
 }
 
 .modal {
-  margin-top: -195px;
   background: none repeat scroll 0% 0% transparent;
   overflow: visible;
   border: 0;
@@ -707,9 +706,5 @@ tbody .price {
 
   thead { 
     font-size: 15px;
-  }
-
-  .modal.fade.in {
-    top: 200px;
   }
 }
