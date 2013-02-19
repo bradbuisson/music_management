@@ -9,4 +9,5 @@ SamuelRainesMusic::Application.routes.draw do
   match '/signin'   => 'sessions#new'
   match '/signout'  => 'sessions#destroy', :via => :delete
   match '/blog'     => 'blogs#index', :as => :blogs
+  match '/music'    => 'dashboard#music'
 end
