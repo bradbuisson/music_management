@@ -127,7 +127,9 @@ footer {
 footer
 .container {
   width: auto;
-  a { color: $grayDark; }
+  a { 
+    color: $grayDark; 
+  }
 }
 
 aside {
