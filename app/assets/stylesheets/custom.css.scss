@@ -278,6 +278,14 @@ aside {
   letter-spacing: 1px;
 }
 
+.home-page {
+  @include transitions;
+}
+
+.show-page {
+  @include transitions;
+}
+
 .home-page .holdster {
   background-color: rgb(255, 255, 255);
   margin: 0 auto;
@@ -291,6 +299,10 @@ aside {
   margin-bottom: 20px;
   @include modules;
   @include holdsters;
+}
+
+.home-page.active, .show-page.active {
+  opacity: 1;
 }
 
 .home-page .well-body {
