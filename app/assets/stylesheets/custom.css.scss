@@ -541,6 +541,10 @@ tbody .price {
   display: inline;
 }
 
+.article-actions {
+  padding-bottom: 10px;
+}
+
 /* Modal overrides */
 
 .modal-form form textarea {
@@ -645,11 +649,36 @@ tbody .price {
    body {
     padding-top: 1em;
   }
+
+  .show-actions {
+    float: none;
+    padding-top: 25px;
+    padding-bottom: 15px;
+    text-align: center;
+  }
 }
 
 @media (max-width: 767px) {
   body {
-    padding: 1em 0;
+    padding: 0;
+  }
+
+  .navbar {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  #home {
+    border-left: 0;
+  }
+
+  #blog {
+    border-right: 0;
+  }
+
+  .navbar
+  .navbar-inner {
+    border-radius: 0;
   }
 
   .navigation {
@@ -657,16 +686,8 @@ tbody .price {
     padding-right: 0;
   }
 
-  #home {
-    border-left: none;
-  }
-
-  #blog {
-    border-right: none;
-  }
-
-  .music-page {
-    margin-top: 0;
+  .home-page .show-title {
+    text-align: center;
   }
 }
 
@@ -685,12 +706,12 @@ tbody .price {
 
   footer,
   .page-wrapper {
-    min-width: 275px;
+    min-width: 335px;
     border-radius: 0;
   }
 
   .navbar {
-    min-width: 305px;
+    min-width: 370px;
   }
 
   .navbar
@@ -735,18 +756,22 @@ tbody .price {
     font-size: 14px;
   }
 
-  .format h1:first-child {
-    margin-top: 2em;
-  }
-
   .format h1 {
     font: bold 18px/22px Georgia, "Times New Roman", serif;
     text-align: center;
     letter-spacing: 1px;
   }
 
+  .home-page .show-title {
+    text-align: left;
+  }
+
   .articles p {
     margin-top: 0;
+  }
+
+  .article-actions {
+    margin-bottom: 15px;
   }
 
   .music-page {
