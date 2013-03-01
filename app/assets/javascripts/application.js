@@ -12,5 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap
-//= require_tree .
+//= require navigation
+//= require bootstrap-transition
+//= require bootstrap-alert
+//= require bootstrap-modal
+//= require bootstrap-dropdown
+//= require bootstrap-tooltip
+//= require bootstrap-button
+//= require bootstrap-collapse
+//= require tooltips
+//= require drag
