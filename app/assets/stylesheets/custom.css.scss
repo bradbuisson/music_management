@@ -3,7 +3,7 @@
 
 /* global configurations */
 
-html { 
+html {
   overflow-y: scroll;
   height: 100%;
   -webkit-font-smoothing: antialiased;
@@ -43,11 +43,11 @@ select,
 }
 
 textarea {
-  resize: none; 
+  resize: none;
 }
 
 section {
-  overflow: auto; 
+  overflow: auto;
 }
 
 h1,
@@ -92,19 +92,19 @@ h4 {
 
 h5,
 h6 {
-  font-size: 11px; 
+  font-size: 11px;
 }
 
-p { 
-  margin: 0px 0px 10px; 
+p {
+  margin: 0px 0px 10px;
 }
 
-small { 
-  font-size: 12px; 
+small {
+  font-size: 12px;
 }
 
-a:focus { 
-  outline: none; 
+a:focus {
+  outline: none;
 }
 
 ul,
@@ -121,14 +121,14 @@ footer {
   padding: 1em;
   border: 1px solid $userBorder;
   color: $grayLight;
-  @include grads;
+  @include footer;
 }
 
 footer
 .container {
   width: auto;
-  a { 
-    color: $grayDark; 
+  a {
+    color: $grayDark;
   }
 }
 
@@ -201,7 +201,7 @@ aside {
 .navbar-inner {
   padding: 0;
   border-color: $border;
-  @include modal-header;
+  @include rounded_nav;
   @include grads;
 }
 
@@ -266,11 +266,11 @@ aside {
 /* Home page Items */
 
 #close_home {
-   padding: 6px 15px; 
+   padding: 6px 15px;
 }
 
 .center {
-  text-align: center; 
+  text-align: center;
 }
 
 .logo {
@@ -471,13 +471,13 @@ h2 .timestamp {
 
 /* Blog formatting */
 
-.format { 
-  margin-bottom: .4em; 
+.format {
+  margin-bottom: .4em;
   line-height: 24px;
   font-size: 15px;
 }
 
-.format p { 
+.format p {
   text-indent: 2em;
 }
 
@@ -495,7 +495,7 @@ table {
   @include tables-shadow;
 }
 
-thead { 
+thead {
   @include footer;
   font-size: 16px;
 }
@@ -523,8 +523,8 @@ tbody .price {
   display: inline-block;
 }
 
-.share-actions a { 
-  display: inline; 
+.share-actions a {
+  display: inline;
 }
 
 /* Modal overrides */
@@ -573,20 +573,20 @@ tbody .price {
   text-align: center;
 }
 
-.modal-body { 
-  overflow: hidden; 
+.modal-body {
+  overflow: hidden;
 }
 
-.modal-backdrop, 
-.modal-backdrop.fade.in { 
-  opacity: .4; 
+.modal-backdrop,
+.modal-backdrop.fade.in {
+  opacity: .4;
 }
 
 .username_modal {
   display: block;
 }
 
-.modal-footer { 
+.modal-footer {
   cursor: move;
 }
 
@@ -594,7 +594,7 @@ tbody .price {
 
 [class^="icon-pencil"], [class*=" icon-pencil"],
 [class^="icon-plus-sign"], [class*=" icon-plus-sign"] {
-  margin-right: 8px; 
+  margin-right: 8px;
 }
 
 #alert-notice {
@@ -671,8 +671,8 @@ tbody .price {
     border-radius: 0;
   }
 
-  .navbar { 
-    min-width: 305px; 
+  .navbar {
+    min-width: 305px;
   }
 
   .navbar
@@ -731,7 +731,7 @@ tbody .price {
     margin-top: 0;
   }
 
-  thead { 
+  thead {
     font-size: 15px;
   }
 }

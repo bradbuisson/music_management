@@ -1,8 +1,9 @@
 <ul id="links" class="nav navigation">
-  <li id="home" class=""><%= link_to "News", :articles %></li>
+  <li id="home" class=""><%= link_to "Home", :home %></li>
+  <li class=""><%= link_to "News", :articles %></li>
   <li class=""><%= link_to "Live", :shows %></li>
   <li class=""><%= link_to "Music", :music %></li>
-  <li id="blog" class=""><%= link_to "Blog", :blogs %></li>
+  <li id="blog" class=""><%= link_to "Blog", :blog %></li>
 </ul>
 
 <% if signed_in? %>

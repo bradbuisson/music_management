@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
   before_filter :signed_in_user, except: [:index, :show]
-  before_filter :remove_stale_tags, only: [:create, :update, :destroy]
+  before_filter :remove_stale_tags!, only: [:create, :update, :destroy]
 
   def index
     @title = "Samuel Raines Blog"
@@ -13,21 +13,12 @@ class BlogsController < ApplicationController
     end
   end
 
-  def show
-    @blog = Blog.find(params[:id])
-    @title = @blog.title
-
-    respond_to do |format|
-      format.html
-      format.json { render json: @blog }
-    end
-  end
-
   def new
     @blog = Blog.new
     @title = "New Blog"
 
     respond_to do |format|
+      format.html
       format.js
       format.json { render json: @blog }
     end
@@ -36,7 +27,7 @@ class BlogsController < ApplicationController
   def edit
     @blog = Blog.find(params[:id])
     @title = "Edit Blog | #{@blog.title}"
-    respond_to :js
+    respond_to :html, :js
   end
 
   def create
@@ -47,10 +38,7 @@ class BlogsController < ApplicationController
         format.html { redirect_to blogs_url, notice: 'Blog was successfully created.' }
         format.json { render json: @blog, status: :created, location: blogs_url }
       else
-        format.html { @unpublished = []
-                      @blogs = []
-                      flash.now[:notice] = "Something went wrong with your request."
-                      render 'index' }
+        format.html { render action: "new" }
         format.json { render json: @blog.errors, status: :unprocessable_entity }
       end
     end
@@ -64,19 +52,14 @@ class BlogsController < ApplicationController
         format.html { redirect_to blogs_url, notice: 'Blog was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { @unpublished = []
-                      @blogs = []
-                      flash.now[:notice] = "Something went wrong with your request."
-                      render 'index' }
+        format.html { render action: "edit" }
         format.json { render json: @blog.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def destroy
-    @blog = Blog.find(params[:id])
-    @blog.destroy
-
+    @blog = Blog.find(params[:id]).destroy
     respond_to do |format|
       format.html { redirect_to blogs_url, notice: "Your blog was removed" }
       format.json { head :no_content }
@@ -85,7 +68,7 @@ class BlogsController < ApplicationController
 
 private
 
-  def remove_stale_tags
+  def remove_stale_tags!
     Tag.all.each { |tag| tag.delete if tag.blogs.empty? }
   end
 end

@@ -31,6 +31,10 @@
   background-image: -moz-linear-gradient(top, #fbfbfb 0%, #f0f0f0 50%, #eaeaea 51%, #f8f8f8 100%)
   background-image: -o-linear-gradient(top, #fbfbfb 0%, #f0f0f0 50%, #eaeaea 51%, #f8f8f8 100%)
   background-image: linear-gradient(to bottom, #fbfbfb 0%, #f0f0f0 50%, #eaeaea 51%, #f8f8f8 100%)
+  -webkit-box-shadow: inset 0px 1px 0px $white
+  -o-box-shadow: inset 0px 1px 0px $white
+  -moz-box-shadow: inset 0px 1px 0px $white
+  box-shadow: inset 0px 1px 0px $white
 
 @mixin circles
   -webkit-border-radius: 10px
@@ -56,15 +60,11 @@
   -o-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1)
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1)
 
-@mixin modal-header
+@mixin rounded_nav
   -webkit-border-radius: 15px 15px 15px 15px
   -moz-border-radius: 15px 15px 15px 15px
   -o-border-radius: 15px 15px 15px 15px
   border-radius: 15px 15px 15px 15px
-  -webkit-box-shadow: inset 0px 1px 0px $white
-  -o-box-shadow: inset 0px 1px 0px $white
-  -moz-box-shadow: inset 0px 1px 0px $white
-  box-shadow: inset 0px 1px 0px $white
 
 @mixin well-header
   -webkit-border-radius: 5px 5px 0px 0px
@@ -75,6 +75,12 @@
   -webkit-border-radius: 0px 0px 5px 5px
   -moz-border-radius: 0px 0px 5px 5px
   border-radius: 0px 0px 5px 5px
+
+@mixin modal-header
+  -webkit-border-radius: 6px 6px 0px 0px
+  -moz-border-radius: 6px 6px 0px 0px
+  border-radius: 6px 6px 0px 0px
+  -o-border-radius: 6px 6px 0px 0px
 
 @mixin modal
   @include modules

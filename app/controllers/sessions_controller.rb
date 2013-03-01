@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
   def new
     if signed_in?
-      redirect_to :home, notice: "You are already signed in!" 
+      redirect_to :home, notice: "You are already signed in!"
     else
       @title = "Sign in"
     end
@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
       redirect_back_or :home
     else
       flash.now[:error] = 'Invalid email/password combination'
-      render 'new'
+      render :new
     end
   end
 

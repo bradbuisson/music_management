@@ -26,6 +26,7 @@ class ShowsController < ApplicationController
     @show = Show.new
 
     respond_to do |format|
+      format.html
       format.js
       format.json { render json: @show }
     end
@@ -34,7 +35,7 @@ class ShowsController < ApplicationController
   def edit
     @show = Show.find(params[:id])
     @title = "#{@show.time} | #{@show.venue}"
-    respond_to :js
+    respond_to :html, :js
   end
 
   def create
@@ -45,9 +46,7 @@ class ShowsController < ApplicationController
         format.html { redirect_to shows_url, notice: 'Show was successfully created.' }
         format.json { render json: @show, status: :created, location: shows_url }
       else
-        format.html { @shows = []
-                      flash.now[:notice] = "Something went wrong with your request."
-                      render 'index' }
+        format.html { render action: "new" }
         format.json { render json: @show.errors, status: :unprocessable_entity }
       end
     end
@@ -61,18 +60,14 @@ class ShowsController < ApplicationController
         format.html { redirect_to shows_url, notice: 'Show was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { @shows = []
-                      flash.now[:notice] = "Something went wrong with your request."
-                      render 'index' }
+        format.html { render action: "edit" }
         format.json { render json: @show.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def destroy
-    @show = Show.find(params[:id])
-    @show.destroy
-
+    @show = Show.find(params[:id]).destroy
     respond_to do |format|
       format.html { redirect_to shows_url, notice: "Your show was removed" }
       format.json { head :no_content }

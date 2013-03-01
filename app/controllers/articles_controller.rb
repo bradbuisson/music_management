@@ -8,7 +8,6 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       format.atom
       format.html
-      format.xml { render xml: @articles }
       format.json { render json: @articles }
     end
   end
@@ -19,7 +18,6 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.xml { render xml: @article }
       format.json { render json: @article }
     end
   end
@@ -29,15 +27,20 @@ class ArticlesController < ApplicationController
     @title = "New Headline"
 
     respond_to do |format|
+      format.html
       format.js
-      format.json { render json: @blog }
+      format.json { render json: @article }
     end
   end
 
   def edit
     @article = Article.find(params[:id])
     @title = "Edit Article | #{@article.content}"
-    respond_to :js
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def create
@@ -48,9 +51,7 @@ class ArticlesController < ApplicationController
         format.html { redirect_to articles_url, notice: 'Article was successfully created.' }
         format.json { render json: @article, status: :created, location: articles_url }
       else
-        format.html { @articles = []
-                      flash.now[:notice] = "Something went wrong with your request."
-                      render 'index' }
+        format.html { render action: "new" }
         format.json { render json: @article.errors, status: :unprocessable_entity }
       end
     end
@@ -64,18 +65,14 @@ class ArticlesController < ApplicationController
         format.html { redirect_to articles_url, notice: 'Article was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { @articles = []
-                      flash.now[:notice] = "Something went wrong with your request."
-                      render 'index' }
+        format.html { render action: "edit" }
         format.json { render json: @article.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def destroy
-    @article = Article.find(params[:id])
-    @article.destroy
-
+    @article = Article.find(params[:id]).destroy
     respond_to do |format|
       format.html { redirect_to articles_url, notice: "Your article was removed" }
       format.json { head :no_content }

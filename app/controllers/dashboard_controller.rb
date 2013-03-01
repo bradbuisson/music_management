@@ -4,6 +4,6 @@ class DashboardController < ApplicationController
     @title = "Home"
     @articles = Article.paginate(page: params[:page], per_page: 4)
     @shows = Show.paginate(page: params[:page], per_page: 3)
-    @blog = Blog.published.sort_by(&:updated_at).last
+    @blog = Blog.published.last
   end
 end

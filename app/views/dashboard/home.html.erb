@@ -10,7 +10,7 @@
     </div>
     <div class="holdster">
       <ul class="share-actions">
-        <%= render(partial: ("shows/info"), collection: @shows, as: :show) %>
+        <%= render partial: "shows/info", collection: @shows, as: :show %>
       </ul>
     </div>
   </div>
@@ -20,13 +20,12 @@
       <span class="bio title"> Latest Entry </span>
     </div>
     <div class="holdster">
-      <%= render @blog, object: @blog, as: :blog %>
+      <%= render @blog, object: @blog, as: :blog if @blog %>
     </div>
   </div>
 
   <div class="span3" id="module">
     <div class="well-header">
-      <span class="bio title">Updates
         <%= link_to(image_tag("rss.png"), :articles, id: "atom",
             title: "Subscribe") %>
       </span>
