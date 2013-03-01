@@ -13,6 +13,16 @@ class BlogsController < ApplicationController
     end
   end
 
+  def show
+    @blog = Blog.find(params[:id])
+    @title = @blog.title
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @blog }
+    end
+  end
+
   def new
     @blog = Blog.new
     @title = "New Blog"

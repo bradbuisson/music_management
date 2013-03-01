@@ -6,8 +6,9 @@ SamuelRainesMusic::Application.routes.draw do
 
   root to: 'dashboard#home', as: :home
 
-  get     '/signin'   => 'sessions#new'
-  delete  '/signout'  => 'sessions#destroy'
-  get     '/blog'     => 'blogs#index',     as: :blog
-  get     '/music'    => 'dashboard#music'
+  get     '/signin'     => 'sessions#new'
+  delete  '/signout'    => 'sessions#destroy'
+  get     '/blog'       => 'blogs#index',     as: :main_blog
+  get     '/music'      => 'dashboard#music'
+  get     '/entry/:id'  => 'blogs#show',      as: :entry
 end

@@ -1,7 +1,7 @@
 <div id="<%= blog.id %>" class="well-body well-inner">
 
   <h2 class="bio title"> 
-    <%= link_to blog.title, blog %>
+    <%= link_to blog.title, entry_path(blog) %>
     <span class="timestamp">
       <%= blog.timestamp %>
     </span>
