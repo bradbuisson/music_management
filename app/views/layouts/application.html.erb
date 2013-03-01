@@ -26,8 +26,10 @@
         </div>
       </div>
       <div class="page-wrapper" id="main" role="main">
-        <%= render 'layouts/messages' %>
-        <%= yield %>
+        <div class="page-fade">
+          <%= render 'layouts/messages' %>
+          <%= yield %>
+        </div>
       </div>
       <footer class="footer">
         <div class="container">

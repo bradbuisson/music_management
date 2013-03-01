@@ -278,11 +278,7 @@ aside {
   letter-spacing: 1px;
 }
 
-.home-page {
-  @include transitions;
-}
-
-.show-page {
+.page-fade {
   @include transitions;
 }
 
@@ -301,7 +297,7 @@ aside {
   @include holdsters;
 }
 
-.home-page.active, .show-page.active {
+.page-fade.active {
   opacity: 1;
 }
 

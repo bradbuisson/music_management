@@ -1,6 +1,6 @@
 jQuery ->
 
-  $('.home-page, .show-page').addClass 'active'
+  $('.page-fade').addClass 'active'
    # Adds a fade to the home and show pages on load in conjuntion with transtions
 
   $('.navigation li').each ->
