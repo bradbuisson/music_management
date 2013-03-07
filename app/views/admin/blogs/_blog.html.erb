@@ -21,7 +21,7 @@
 
   <div class="well-footer blog-tags">
     <% if blog.tags.any? %>
-      <ol class="bio share-actions">
+      <ol class="bio share-actions" style="padding-bottom: 10px;">
         <% blog.tags.each do |tag| %>
           <li>
             <i class="icon-tag"></i> <%= tag.name %> (<%= tag.blogs.count %>)

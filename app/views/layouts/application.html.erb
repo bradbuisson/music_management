@@ -7,7 +7,7 @@
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Future Home For Samuel Raines Music" %>">
     <meta name="author" content="<%= content_for?(:author) ? yield(:author) : "Artist: Samuel Guy Raines, Designer: Nathan Carl Couch" %>">
       <%= auto_discovery_link_tag(:atom, { controller: "articles", action: "index" },
-                                  { title: "Sam Raines Official Music Updates" } )%>
+            { title: "Sam Raines Official Music Updates" } )%>
       <%= stylesheet_link_tag "application", media: "all" %>
       <%= javascript_include_tag "application" %>
       <%= csrf_meta_tags %>

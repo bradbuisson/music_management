@@ -572,6 +572,7 @@ tbody .price {
 }
 
 .dashboard li a {
+  text-shadow: 0px 1px 1px $white;
   color: darken($blue, 5%);
   &:hover {
     color: darken($blue, 15%);
