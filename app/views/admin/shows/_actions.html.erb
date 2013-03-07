@@ -1,0 +1,16 @@
+<ul class="actions">
+  <li>
+    <a href="<%= edit_admin_show_path(show) %>"
+        data-remote="true" title="Edit
+        <%= show.venue %> on <%= show.date %> at <%= show.time %>">
+      <i class="icon-pencil"> </i>
+    </a>
+  </li>
+  <li>
+    <a href="<%= admin_show_path(show) %>" data-method="delete" data-remote="true"
+        data-confirm="Are you sure?" title="Delete
+        <%= show.venue %> on <%= show.date %> at <%= show.time %>">
+      <i class="icon-remove"> </i>
+    </a>
+  </li>
+</ul>

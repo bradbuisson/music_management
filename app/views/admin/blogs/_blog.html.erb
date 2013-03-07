@@ -1,29 +1,30 @@
-<li id="blog_<%= blog.id %>">
+<li class="blogs" id="blog_<%= blog.id %>">
 
   <h2 class="bio title">
-    <%= link_to blog.title, entry_path(blog) %>
+    <%= blog.title  %>
+    <%= render partial: 'admin/blogs/actions', object: blog, as: :blog %>
   </h2>
 
   <div class="format">
     <% unless action_name == "show" %>
       <%= auto_link truncate(blog.content, length: 420) %>
-      <%= link_to "read more", blog_path(blog), remote: true %>
+      <%= link_to "read more", admin_blog_path(blog), remote: true %>
     <% else %>
     <%= auto_link(blog.content, html: { target: '_blank' }) do |content|
           truncate(content, length: 30) end %>
     <% end %>
   </div>
 
-  <h2 class="bio title" style="margin-top: -5px">
-    <span class="timestamp"><%= blog.timestamp %></span>
-  </h2>
+    <h2 class="bio title" style="margin-top: -15px">
+      <span class="timestamp"><%= blog.timestamp %></span>
+    </h2>
 
-  <div class="well-footer" style="margin-left: 0;padding-bottom: 25px;">
+  <div class="well-footer blog-tags">
     <% if blog.tags.any? %>
       <ol class="bio share-actions">
         <% blog.tags.each do |tag| %>
           <li>
-            <i class="icon-tag"></i> <%= link_to tag.name, tag %>
+            <i class="icon-tag"></i> <%= tag.name %> (<%= tag.blogs.count %>)
           </li>
         <% end %>
       </ol>

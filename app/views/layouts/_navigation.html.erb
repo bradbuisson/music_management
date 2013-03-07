@@ -1,13 +1,11 @@
 <ul id="links" class="nav navigation">
-  <li id="home" class=""><%= link_to "Home", :home %></li>
-  <li class=""><%= link_to "News", :articles %></li>
+  <% if signed_in? %>
+    <li id="home" class=""><%= link_to "Admin", :admin_root %></li>
+    <li class=""><%= link_to "News", :articles %></li>
+  <% else %>
+    <li id="home" class=""><%= link_to "News", :articles %></li>
+  <% end %>
   <li class=""><%= link_to "Live", :shows %></li>
   <li class=""><%= link_to "Music", :music %></li>
-  <li id="blog" class=""><%= link_to "Blog", :main_blog %></li>
+  <li id="blog"class=""><%= link_to "Blog", :main_blog %></li>
 </ul>
-
-<% if signed_in? %>
-  <ul class="nav pull-right">
-    <%= render 'layouts/usernav' %>
-  </ul>
-<% end %>

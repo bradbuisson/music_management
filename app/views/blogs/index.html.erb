@@ -4,17 +4,10 @@
 
 <div class="row-fluid blogs-all">
   <aside class="span9">
-    <% if signed_in? && @unpublished.any? %>
-      <legend> Unpublished Blogs </legend>
-
-        <%= render(@unpublished) %>
-        <br />
-      <br />
-      <legend> Published Blogs </legend>
-    <% end %>
-
-      <%= render(@blogs) %>
+    <ul class="well-body well-inner">
+      <%= render @blogs %>
+    </ul>
   </aside>
 
-  <%= render('shared/tagbar') %>
+  <%= render 'shared/tagbar' %>
 </div>

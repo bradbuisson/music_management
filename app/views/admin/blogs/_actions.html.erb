@@ -1,0 +1,14 @@
+<ul class="share-actions pull-right">
+  <li>
+    <a href="<%= edit_admin_blog_path(blog) %>"
+        data-remote="true" title="Edit <%= blog.title %>">
+      <i class="icon-pencil"> </i>
+    </a>
+  </li>
+  <li>
+    <a href="<%= admin_blog_path(blog) %>" data-method="delete" data-remote="true"
+        data-confirm="Are you sure?" title="Delete <%= blog.title %>">
+      <i class="icon-remove"> </i>
+    </a>
+  </li>
+</ul>

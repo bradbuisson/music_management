@@ -1,25 +1,9 @@
-<div id="<%= article.id %>" class="well-body well-inner articles">
+<li id="<%= article.id %>">
 
   <span class="center bio">
-    <%= article.timestamp %> 
+    <%= article.timestamp %>
   </span>
 
   <p> <%= auto_link(article.content, html: { target: '_blank' }) do |content|
     truncate(content, length: 30) end %> </p>
-
-  <div class="well-footer">
-
-    <% if identified?(article) %>
-      <span style="display:none;">
-    <% else %>
-      <span class="time-ago">
-    <% end %>
-
-      <%= link_to "#{time_ago_in_words(article.created_at)} ago", article %>
-    </span>
-
-    <%= render( partial: ('articles/actions'), 
-        locals: { article: article } ) if signed_in? %>
-  </div>
-</div>
-
+</li>

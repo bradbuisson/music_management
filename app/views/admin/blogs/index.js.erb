@@ -1,0 +1,5 @@
+$("#item_title").html("Published Entries")
+$("#items").html("<%= escape_javascript(render(@blogs)) %>")
+$("#panel2, #close").html("")
+$("#item_title2").html("Draft Entries")
+$("#items2").html("<%= escape_javascript(render(@drafts)) %>")

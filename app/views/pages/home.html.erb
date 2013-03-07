@@ -1,0 +1,5 @@
+<% content_for :head do %>
+  <% provide(:title, @title) %>
+<% end %>
+
+<%= yield flash.now[:info] = "Future Home For Samuel Raines Music" %>

@@ -9,8 +9,8 @@
 @mixin transitions
   -webkit-transition: all ease-in-out 0.6s
   -moz-transition: all ease-in-out 0.6s
+  -o-transition: all ease-in-out 0.6s
   transition: all ease-in-out 0.6s
-  transform: scale(1)
   opacity: 0
 
 @mixin forms
@@ -123,3 +123,18 @@
   -o-box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.05)
   box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.05)
   text-shadow: 0px 1px 1px white
+
+@mixin dashboard
+  @include paddings
+  @include modules
+  -webkit-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1)
+  -moz-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1)
+  -o-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1)
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1)
+
+@mixin dashboard-header
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($white), to($outterBody))
+  background-image: -webkit-linear-gradient(top, $white, $outterBody)
+  background-image: -moz-linear-gradient(top, $white, $outterBody)
+  background-image: -o-linear-gradient(top, $white, $outterBody)
+  background-image: linear-gradient(to bottom, $white, $outterBody)

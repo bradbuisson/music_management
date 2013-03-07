@@ -1,0 +1,5 @@
+<%= form_for([:admin, @article], remote: true) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+    <%= f.text_area :content, rows: 2 %>
+  <%= f.submit "Post It", class: "btn btn-primary" %>
+<% end %>

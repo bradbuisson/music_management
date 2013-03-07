@@ -1,0 +1,21 @@
+<li class="articles" id="show_<%= show.id %>">
+
+  <p class="show-title center">
+    <%= show.venue %>
+    <span class="label label-success">
+      <%= show.price_for_show %>
+    </span>
+  </p>
+
+  <div class="show-actions">
+    <%= render partial: 'admin/shows/actions', object: show, as: :show %>
+  </div>
+
+  <div class="center">
+    <b><%= show.date %> at <%= show.time %></b>
+  </div>
+
+  <div class="center shows">
+    <%= auto_link(show.address) %>
+  </div>
+</li>

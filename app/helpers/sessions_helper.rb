@@ -23,10 +23,10 @@ protected
     user == current_user
   end
 
-  def signed_in_user
+  def admin_user
     unless signed_in?
       store_location
-      redirect_to signin_url, notice: "Please sign in as administrator."
+      redirect_to :signin, notice: "Please sign in as administrator."
     end
   end
 
@@ -42,5 +42,9 @@ protected
 
   def store_location
     session[:return_to] = request.url
+  end
+
+  def dashboard_view?
+    controller_name == "dashboard"
   end
 end

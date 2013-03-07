@@ -1,0 +1,4 @@
+$("#item_title2").html("<%= @title %>")
+$("#items").html("<%= escape_javascript(render(@shows)) %>")
+$("#panel2").html("<%= escape_javascript(render('form')) %>")
+$("#show_date, #show_time, #show_venue, #show_address, #show_price").val('')

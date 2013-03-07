@@ -1,0 +1,4 @@
+$("#item_title2").html("<%= @title %>")
+$("#blog_<%= @blog.id %>").html('<div class="highlight"><%= escape_javascript(render(@blog)) %></div>')
+$("#panel2").html("<%= escape_javascript(render(@blog)) %>")
+$("#items2, #close").html("")

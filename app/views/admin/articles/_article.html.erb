@@ -1,0 +1,13 @@
+<li class="articles" id="article_<%= article.id %>">
+
+  <span class="center">
+    <span class="bio"><%= article.timestamp %></span>
+  </span>
+
+  <p> <%= auto_link(article.content, html: { target: '_blank' }) do |content|
+    truncate(content, length: 30) end %> </p>
+
+  <div class="article-actions">
+    <%= render partial: 'admin/articles/actions', object: article, as: :article %>
+  </div>
+</li>
