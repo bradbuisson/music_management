@@ -170,23 +170,6 @@ aside {
 }
 
 .navbar
-.nav.pull-right {
-  border-top: 1px solid $border;
-  text-align: center;
-  border-right: 0;
-}
-
-.nav.pull-right #fat-menu ul li > a:hover {
-  color: $white;
-}
-
-.navbar
-.nav.pull-right li a:first-child:hover {
-  color: $navGrayActive;
-  background-image: none;
-}
-
-.navbar
 .navbar-inner {
   padding: 0;
   border-color: $border;
@@ -238,10 +221,6 @@ aside {
 .nav li a:hover:active {
   color: $textGrayLight;
   @include hovers;
-}
-
-.dropdown-menu li > a {
-  @include circles;
 }
 
 #home {
@@ -502,7 +481,7 @@ h2 .timestamp {
 
 .title {
   font-size: 26px;
-  margin-bottom: .5em;
+  margin-bottom: 1em;
 }
 
 /* Blog formatting */
@@ -562,31 +541,22 @@ tbody .price {
   padding: 15px 20px 0 8px;
 }
 
-.dashboard {
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 13px;
-  line-height: 16px;
-  margin-bottom: 1em;
-  @include dashboard;
-  @include dashboard-header;
+.nav-pills li a {
+  text-shadow: 0px 1px 1px $white;
+  letter-spacing: 1px;
+  color: rgb(78, 88, 92);
 }
 
-.dashboard li a {
-  text-shadow: 0px 1px 1px $white;
-  color: darken($blue, 5%);
+.nav-pills .dropdown li a {
+  color: rgb(57, 65, 68);
   &:hover {
-    color: darken($blue, 15%);
+    color: $white;
+    text-shadow: 0px 1px 1px darken($blue, 15%);
   }
 }
 
-.dashboard-header {
-  background-color: $moduleGray;
-  padding: 12px;
-  @include dashboard-header;
-}
-
-.dashboard-inner {
-  margin: 0 0 0 12px;
+.nav-pills .open .dropdown-toggle {
+  text-shadow: 0px 1px 1px gray;
 }
 
 .share-actions li {
