@@ -6,4 +6,8 @@ class PagesController < ApplicationController
     @shows = Show.paginate(page: params[:page], per_page: 3)
     @blog = Blog.published.last
   end
+
+  def music
+    @title = "Sam Raines Music"
+  end
 end

@@ -1,4 +1,5 @@
 $("#close").html("<%= escape_javascript(render('close')) %>")
 $("#item_title2").html("<%= @title %>")
-$("#panel2").html("<%= escape_javascript(render('form')) %>")
+$("#panel2").html("<p class='center lead'><%= @article.content %></p>")
+$("#article_<%= @article.id %>").html("<%= escape_javascript(render('form')) %>")
 $("#items2").html("")

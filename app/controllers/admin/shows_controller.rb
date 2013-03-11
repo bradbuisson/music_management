@@ -16,7 +16,7 @@ class Admin::ShowsController < ApplicationController
 
   def edit
     @show = Show.find(params[:id])
-    @title = "Editing #{@show.venue}"
+    @title = "Editing: #{@show.venue} at #{@show.time}"
   end
 
   def create

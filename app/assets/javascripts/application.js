@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require navigation
 //= require bootstrap-transition
 //= require bootstrap-alert
 //= require bootstrap-modal
@@ -20,5 +19,8 @@
 //= require bootstrap-tooltip
 //= require bootstrap-button
 //= require bootstrap-collapse
+//= require navigation
 //= require tooltips
-//= require drag
+//= require player
+
+$(function(){$('audio').audioPlayer();});

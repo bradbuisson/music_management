@@ -21,6 +21,54 @@ body {
 
 @import "bootstrap-responsive";
 
+.page-header h1 {
+  font-size: 80px;
+  font-weight: bold;
+  line-height: 1;
+  text-shadow: 3px 3px -3px rgba(144, 148, 112, .4);
+}
+
+.page-header h1 small {
+  font-size: 37px;
+  text-shadow: none;
+}
+
+.hoverable img {
+  @include transitions;
+}
+
+.hoverable-over img {
+  opacity: 1;
+}
+
+#faade .blog-wrapper {
+  cursor: default;
+  box-shadow: none;
+  background: none;
+}
+
+#faade .blogs img,
+#faade .photos img,
+#faade .blog-container {
+  width: 100px;
+  height: 100px;
+  border: 1px solid $inputBorder;
+  @include modules;
+}
+
+#faade .photos img,
+#faade .blog-container {
+  width: 100px;
+  height: 100px;
+}
+
+#faade .blog-container {
+  display: inline-block;
+  padding: 10px;
+  margin: 10px 0 10px;
+  background-color: $white;
+}
+
 a {
   color: $softGreen;
   text-shadow: none;
@@ -162,6 +210,7 @@ aside {
 .navbar
 .nav {
   margin-right: 0;
+  float: none;
 }
 
 .navigation {
@@ -783,6 +832,10 @@ tbody .price {
     font: bold 18px/22px Georgia, "Times New Roman", serif;
     text-align: center;
     letter-spacing: 1px;
+  }
+
+  .highlight {
+    margin-right: -15px;
   }
 
   .articles p {

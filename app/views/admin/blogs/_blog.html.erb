@@ -21,13 +21,13 @@
 
   <div class="well-footer blog-tags">
     <% if blog.tags.any? %>
-      <ol class="bio share-actions" style="padding-bottom: 10px;">
+      <ul class="bio share-actions" style="padding-bottom: 15px;">
         <% blog.tags.each do |tag| %>
           <li>
             <i class="icon-tag"></i> <%= tag.name %> (<%= tag.blogs.count %>)
           </li>
         <% end %>
-      </ol>
+      </ul>
     <% end %>
   </div>
 </li>

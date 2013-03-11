@@ -6,24 +6,6 @@
 
 <div class="home-page row-fluid">
 
-  <div class="span5">
-    <div id="panel1" class="module">
-      <div class="well-header">
-        <span id="item_title" class="bio title">
-          <%= @random_entry[2] || @title %>
-        </span>
-      </div>
-      <div class="holdster">
-        <ul id="items" class="well-body well-inner">
-          <%= render @random_entry[0] %>
-        </ul>
-      </div>
-      <div class="well-bottom" style="margin-bottom: 1em;">
-        <a href="#" title="Top"> <i class="icon-arrow-up"></i> </a>
-      </div>
-    </div>
-  </div>
-
   <div class="span7">
     <div class="module">
       <div class="well-header">
@@ -39,7 +21,28 @@
         <ul id="items2" class="well-body well-inner">
         </ul>
       </div>
-      <div class="well-bottom"></div>
+      <div class="well-bottom" style="margin-bottom: 1em;">
+        <a href="#" title="Top"> <i class="icon-arrow-up"></i> </a>
+      </div>
     </div>
   </div>
+
+  <div class="span5">
+    <div id="panel1" class="module">
+      <div class="well-header">
+        <span id="item_title" class="bio title">
+          <%= @random_entry[2] || @title %>
+        </span>
+      </div>
+      <div class="holdster">
+        <ul id="items" class="well-body well-inner">
+          <%= render @random_entry[0] %>
+        </ul>
+      </div>
+      <div class="well-bottom">
+        <a href="#" title="Top"> <i class="icon-arrow-up"></i> </a>
+      </div>
+    </div>
+  </div>
+
 </div>
