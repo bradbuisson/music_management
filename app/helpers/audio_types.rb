@@ -7,20 +7,20 @@ module AudioTypes
     end
   end
 
-  def os
-    @os ||= begin
+  def device
+    @device ||= begin
       case user_agent
-        when 'windows'
-          "C:\/Documents"
-        when 'linux'
-          '~/'
+        when %r{(mac|ipad|iphone|ipod|chrome|msie)}
+          'mp3'
+        when %r{(mozilla|opera)}
+          'ogg'
       end
     end
   end
 
-  def device_can_play?(format)
+  def device_can_play?(audio_type)
     case true
-      when format == device
+      when audio_type == device
       when 'mp3' && %w{mac iphone ipad ipod msie chrome}.include?(device)
       when 'ogg' && %w{mozilla opera}.include?(device)
     end
