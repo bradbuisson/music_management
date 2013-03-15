@@ -7,13 +7,13 @@ module AudioTypes
     end
   end
 
-  def device
-    @device ||= begin
+  def os
+    @os ||= begin
       case user_agent
-        when %r{(mac|ipad|iphone|ipod|chrome|msie)}
-          'mp3'
-        when %r{(mozilla|opera)}
-          'ogg'
+        when 'windows'
+          "C:\/Documents"
+        when 'linux'
+          '~/'
       end
     end
   end
